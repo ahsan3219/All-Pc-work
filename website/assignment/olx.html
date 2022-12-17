@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!--Get your own code at fontawesome.com-->
+    <!-- Media query 
+    and 
+    flex can use
+     -->
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <link rel="icon" type="image/x-icon" href="https://seeklogo.com/images/O/olx-logo-20F1656D13-seeklogo.com.png">
+
+
+    <style>
+        #sear {
+            display: flex;
+            justify-content: space-evenly;
+
+            flex-direction: row;
+
+        }
+
+        #sea {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center
+        }
+
+        #ab {
+            width: 36px;
+            position: relative;
+            left: -12px;
+            top: -6px;
+        }
+
+        .icon {
+            position: relative;
+            left: -15px;
+        }
+
+        .icon>button {
+
+            position: relative;
+            left: 0px;
+
+        }
+
+        #LOG {
+            color: black;
+            text-decoration: underline;
+            font-weight: bold;
+
+        }
+
+        #LOG:hover {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+
+            margin: 0;
+            padding: 0px;
+
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .lis {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: black;
+
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 4px 0px 0px 4px;
+            display: inline-block;
+            padding: 6px;
+            margin-left: 5px;
+        }
+
+
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .arrow:hover {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .mai {
+            position: fixed;
+            width: auto;
+            height: auto;
+            background-color: bisque
+        }
+    </style>
+
+    <title>OLX - Buy and sell</title>
+</head>
+
+<body class="container">
+
+
+
+
+    <div class="mai">
+        <nav class="navbar navbar-expand-lg" style="background-color: ;">
+            <div class="container-fluid">
+                <img src="https://1000logos.net/wp-content/uploads/2020/09/OLX-logo.jpg" alt=""
+                    style="position: relative; top: -6px;" width="40px">
+                <a class="navbar-brand" href="#" style="position: relative; left: 40px; display: inline-block;">
+                    <i class='fas fa-car'
+                        style=" font-size: 40px; border-radius:  50%; box-shadow: 3px 3px 3px lightgrey inset"
+                        id="car"></i>
+                    <p style="position:relative ; top: -7px; left: 10px; display:inline-block ;">Motors </p>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="navbar-brand" aria-current="page"
+                            style="position: relative; left: 40px; display: inline-block;" href="#">
+
+
+
+
+
+                            <i class="fas fa-building"
+                                style=" font-size: 40px; border-radius:  50%; box-shadow: 3px 3px 3px lightgrey inset"
+                                id="car"></i>
+                            <p style=" position:relative ; top: -7px; left: 10px; display:inline-block ;">
+                                Property </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <nav class="navbar bg-light">
+
+
+            <div class="container-fluid">
+                <div id="sear">
+
+                    <img width="60px" src="https://www.logosvgpng.com/wp-content/uploads/2020/10/olx-logo-vector.png"
+                        alt="">
+                    <div class="sea">
+                        <form class="d-flex" role="search">
+
+
+                            <select class="form-control me-2"
+                                style="border:2px black solid; width: 600px; height: 50px; margin-left: 20px;"
+                                type="select" placeholder="Pakistan" aria-label="Search">
+
+                                <option selected value="">Pakistan</option>
+                                <option value="">Your Current Location</option>
+                                <option>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+
+
+                            <input class="form-control me-2" style="border:2px black solid;" type="search"
+                                placeholder="Find Cars, Mobiles, Phones and more" aria-label="Search">
+                    </div>
+                    <div class="icon">
+                        <button class="btn btn-outline-success" type="submit"
+                            style="border:2px black solid; height: 50px; width: 40px;"><img id="ab" height="47px"
+                                src="data:image/png;base64,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"
+                                alt=""></button>
+                    </div>
+                    <p style="margin-top:5px ;"><a href="#" id="LOG" style=""> LogIn</a></p>
+                    <button type="submit"
+                        style="border-top: 3px aqua solid; width: 120px; border-right: 3px red solid; border-width: 5px; border-left: 3px yellow solid; border-bottom: 3px blue solid; border-radius: 25px 25px 25px 25px; margin-left: 10px;"><b>+Sell</b></button>
+                </div>
+
+
+
+            </div>
+            </form>
+        </nav>
+
+    </div>
+    </div>
+    <div>
+    </div>
+
+    <br>
+    <ul>
+        <div class="lis">
+            <a href="#">
+                <li>All Caterogies <i class="arrow up "></i>
+                </li>
+            </a>
+            <a href="#">
+                <li>Mobile Phones</li>
+            </a>
+            <a href="#">
+                <li>Cars</li>
+            </a>
+            <a href="#">
+                <li>Motorcycles</li>
+            </a>
+            <a href="#">
+                <li>Houses</li>
+            </a>
+            <a href="#">
+                <li>Tv-Video-Audio</li>
+            </a>
+            <a href="#">
+                <li>Tablets</li>
+            </a>
+            <a href="#">
+                <li>Land and Plots</li>
+            </a>
+
+
+
+        </div>
+    </ul>
+
+    </div>
+
+    <hr>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+</body>
+
+</html>

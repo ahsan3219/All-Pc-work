@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Date and Time
+    </h1>
+    <h2>Age Calculator</h2>
+    <br>
+    <form action="" onsubmit="abc(); return false ">
+        Enter Date of Birth <input type="text" placeholder="2000,12,25" required id="d">
+        <button>Calculate</button>
+        <br>
+        <h2 id="r"></h2>
+    </form>
+</body>
+<script>
+    a = new Date();
+    document.write(a + "<br>")
+    let b = a.toString()
+    c = b.slice(0, 21)
+    document.write(c + "<br>")
+    document.write("Day=" + a.getDay() + "<br>" + "Date=" + a.getDate() + "<br>" + "Year=" + a.getYear() + "<br>" + "Time=" + a.getTime() + "<br>" + "<br>" + "<br>")
+    // //Age Calculator
+    function abc() {
+        user = document.querySelector("#d").value;
+        let e = new Date(user)
+        f = e.getTime();
+        g = new Date();
+        h = g.getTime();
+        diff = h - f;
+        age = diff / (1000 * 60 * 60 * 24 * 30 * 12)
+        Age = Math.floor(age)
+        x = Age + "<br>"
+        document.querySelector("#r").innerHTML = x
+    }
+
+
+    let ar = ["Syed", "Mohammad", "Ali"];
+    sr = ["Ahsan", "Mesum", "Waseem"];
+    tr = ["Raza", "Naqi"];
+    fr = ["Rizvi", "Naqvi", "Taqvi", "Zaidi", "Jaffery"];
+    for (i = 0; i < ar.length; i++) {
+        for (j = 0; j < sr.length; j++) {
+            for (k = 0; k < tr.length; k++) {
+                for (l = 0; l < fr.length; l++) {
+                    document.write(ar[i] + "  " + sr[j] + "  " + tr[k] + "  " + fr[l] + "<br>")
+
+
+                }
+                //        document.write(ar[i] + "  " + sr[j] + "  " + tr[k] + "<br>")
+
+            }
+            //           document.write(ar[i] + "  " + sr[j] + "<br>")
+
+
+
+        }
+
+        // document.write(ar + "<br>")
+    }
+
+
+    for (i = 0; i <= 100; i + 10) {
+        for (j = 0; j <= 10; j++) {
+            document.write(i + "<br>" + j)
+        }
+    }
+
+
+
+</script>
+
+</html>

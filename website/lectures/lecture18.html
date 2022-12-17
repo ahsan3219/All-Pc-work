@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 18</title>
+    <style>
+
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+    <h1>Lecture 18</h1>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let firstName = "ahsan"
+        let lastName = "raza"
+        let fullName = document.write(firstName + " " + lastName + "<br>")
+        //preIncrement
+        //postIncrement
+        //preDecrement
+        //postDecrement
+
+
+
+        //preIncrement
+        let num1 = 10;
+        document.write("num1 value preIncrement value is ++num1" + "=" + ++num1 + "<br>")
+
+        //postIncrement
+        let num2 = 100;
+        document.write("num2 value postIncrement value is num2++ =" + num2++ + "<br>")
+        document.write("num2 value postIncrement value is num2" + "=" + num2 + "<br>")
+
+        //preDecrement
+        let num3 = 20;
+        document.write("num3 value preIncrement value is --num3" + "=" + --num3 + "<br>")
+
+        //postIncrement
+        let num4 = 30;
+        document.write("num4 value postIncrement value is num4++ =" + num4-- + "<br>")
+        document.write("num4 value postIncrement value is num4" + "=" + num4 + "<br>")
+
+        //Example
+
+
+        let num = 10;
+        document.write("num=" + num + "<br>")
+        let op = num++ + ++num + ++num + --num - ++num + num++ - num++ + ++num
+        //      10 +1 +1= 12  +1=13 + -1=12   -1+12=13 13   - 14+1=15 +15+1=16
+        // 11+12+13+12-13+13-14+16=
+        document.write("num++ + ++num + ++num + --num - ++num + num++ - num++ + ++num = " + op + "<br>")
+
+
+        //Practice
+        let a = 12;
+        b = 15;
+        c = -5;
+        d = 20;
+        r = b + b++ + ++b - d + ++d + c-- + ++a - --a + a++ + c++ + 30 - 10
+        //  15+ 15  + 17  -20 + 21  + -5  + 13  - 12  + 12  + -6  +30 -10
+        document.write("b + b++ + ++b - d + ++d + c-- + ++a - --a + a++ + c++ + 30 - 10 = " + r + "<hr>")
+
+
+        //Promt Using
+        let hint1 = "Ahsan Raza"
+        let hint2 = 30
+        let hint3 = +9312324242
+        userName = prompt("What is your name?", hint1)
+        userAge = prompt("What is your age?", hint2)
+        userNum = prompt("What is your phone number?", hint3)
+        document.write("Your Name is " + userName + "<hr>")
+        document.write("Your Age is " + userAge + "<hr>")
+        document.write("Your Number is " + userNum + "<hr>")
+
+
+
+
+
+    </script>
+</body>
+
+</html>

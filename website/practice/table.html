@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Generator</title>
+
+    <style>
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .content {
+            background-color: rgba(148, 253, 119, 0.8);
+            border-radius: .25em;
+            box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            width: 40%;
+            padding: 5%;
+            left: 30%;
+
+            height: auto;
+            position: relative;
+            margin-top: 15%;
+            text-align: center;
+
+
+
+
+
+
+            background: linear-gradient(45deg, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+            background-size: 600% 100%;
+            animation: gradient 16s linear infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0%
+            }
+
+            100% {
+                background-position: 100%
+            }
+
+
+
+
+        }
+
+        body {
+            font-size: 100%
+        }
+
+        /* Headers */
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: 500;
+        }
+    </style>
+
+    <link rel="icon"
+        href="https://image.winudf.com/v2/image1/Y29tLnJhbWt5c3RlY2guYW5kcm9pZC5tdWx0aXBsaWNhdGlvbnRhYmxlX2ljb25fMTU2Njk5NTYyM18wNDU/icon.png?w=&fakeurl=1">
+
+</head>
+
+<body>
+
+    <video autoplay muted loop id="myVideo">
+        <source
+            src="https://media.istockphoto.com/videos/programming-source-code-abstract-background-video-id1046965704"
+            type="video/mp4">
+    </video>
+
+
+
+    <div class="content">
+        <h1> Mathematical Table</h1>
+        <form action="" onsubmit="doTable(); return false">
+            <input type="text" required placeholder="Which Table" id="tof">
+            <input type="text" required placeholder="Number of multiple" value="10" id="nu">
+        </form>
+        <br>
+        <button onclick=" return false" id="button">Submit</button>
+        <br>
+        <h3 class="output" id="output"></h3>
+
+    </div>
+
+    <script>
+        //         function doTable() {
+        //             b = +document.querySelector("#tof").value;
+        //             a = +document.querySelector("#nu").value;
+        //             for (i = 0; i <= a; i++) {
+        //                 // document.write("<h1  class>"  + b + "x" + i + "=" + i * b + "<br>" + "</h1>");
+        // }
+
+        //         }
+
+
+        let num;
+        let outputList = document.querySelector(".output");
+
+        document.getElementById("button").onclick = function () {
+            num = Number(document.getElementById("tof").value);
+            a = +document.querySelector("#nu").value;
+            document.getElementById("output").innerText = "";
+            for (i = 0; i <= a; i++) {
+                let outputData = document.createElement('div');
+                outputData.innerText = `${num}  X  ${i}  =  ${num * i}`;
+                outputList.appendChild(outputData);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

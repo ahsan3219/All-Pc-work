@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <style>
+        body {
+            background: black;
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        select {
+            background-color: black;
+            border: 1px;
+            font-family: 'Courier New', Courier, monospace;
+            border-color: aliceblue;
+            border-style: double;
+            color: aliceblue;
+        }
+        
+        #email {
+            background-color: black;
+            border-radius: 30px 30px 30px 30px;
+            width: 250px;
+            margin-top: 10px;
+            margin-left: 17px;
+            font-size: 20px;
+            height: 30px;
+            align-items: center;
+            color: aliceblue;
+        }
+        
+        button {
+            background: white;
+            border-color: white;
+            border: 5px;
+            font-size: 13px;
+            color: black;
+            font-weight: bold;
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        button:hover {
+            background: rgb(0, 0, 0);
+            font-size: large;
+            font-weight: bold;
+            border-color: gray;
+            border: 5px;
+            color: rgb(255, 254, 254);
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Form for personal details</h1>
+    </center>
+    <fieldset>
+        <legend>
+            Personal Details
+        </legend>
+        <form><br>
+            <label>Salutation</label>
+            <select>
+                <option selected disabled>--None--</option>
+                <option>Pakistan</option>
+                <option>Indai</option>
+                <option>Iraq</option>
+                <option>Iran</option>
+            </select><br><br>
+            <label>First Name:</label><input id="email" type="text"><br><br>
+            <label>Last Name:</label><input id="email" type="text"><br><br>
+            <label>Gender</label>
+            <input type="radio" name="a">Male
+            <input type="radio" name="a">Female <br><br>
+
+            <label>Email:</label><input id="email" type="text"><br><br>
+
+            <label>Date Of Birth:</label><input id="email" type="date"><br><br>
+            <label>Address:</label> <br> <br><textarea></textarea>
+            <br><br><button>Submit</button>
+        </form>
+    </fieldset>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1546587348-d12660c30c50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bmF0dXJhbHxlbnwwfHwwfHw%3D&w=1000&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .iad {
+            width: 50%;
+            background-color: black;
+            color: aliceblue;
+            opacity: 70%;
+            border-radius: 15px 25px 15px 25px;
+
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    </style>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source
+            src="https://player.vimeo.com/external/449623725.sd.mp4?s=9749030f3653c23509750ed689d26f6f1b2667f3&profile_id=164"
+            type="video/mp4">
+    </video>
+    <center>
+        <div class="iad" id="a1">
+            <h1 style="opacity:100% ;">Todo App with server</h1>
+
+            <form onsubmit="postTodo(); return false">
+                todo: <input id="todo" type="text" required>
+                <button type="submit">Add</button>
+
+            </form>
+
+
+            <h3 id="result" style="opacity:100% ;"> </h3>
+    </center>
+    </div>
+    <script>
+        function postTodo() {
+            let todoText = document.querySelector("#todo").value
+
+            axios.post(`http://192.168.1.108:3000/todo`, {
+                text: todoText
+            })
+                .then(function (response) {
+                    console.log(response.data);
+
+                    document.querySelector("#result").innerHTML = ""
+
+                    response.data.data.map(eachTodo => {
+                        document.querySelector("#result").innerHTML += eachTodo
+                        document.querySelector("#result").innerHTML += '<br>'
+                    })
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+
+        }
+
+        function getAllTodos() {
+            axios.get(`http://192.168.1.108:3000/todos`)
+                .then(function (response) {
+                    console.log(response.data);
+
+                    document.querySelector("#result").innerHTML = ""
+                    function clearAll() {
+                        axios.get(`http://192.168.1.108:3000/delete`)
+                            .then(function (response) {
+
+
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            })
+                    }
+                    response.data.data.map(eachTodo => {
+
+                        document.querySelector("#result").innerHTML += eachTodo +
+                            `  <button type="submit" onclick="clearAll()"><i class="fa fa-trash-o" style="font-size:24px"></i></button>`
+
+                        document.querySelector("#result").innerHTML += '<br>'
+
+
+                    })
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+
+
+
+        setInterval(getAllTodos, 10000);
+
+    </script>
+
+
+</body>
+
+</html>

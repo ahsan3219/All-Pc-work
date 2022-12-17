@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .constraint {
+            width: 80%;
+            border: 1px;
+        }
+
+        button {
+            outline: none;
+            background: none;
+            border: 0;
+            margin: .5em;
+        }
+
+        .round-button {
+            width: 15%;
+        }
+
+        .round-button-circle {
+            width: 50%;
+            height: 0;
+            padding-bottom: 50%;
+            border-radius: 50%;
+            overflow: hidden;
+
+            background: #FCD508;
+            box-shadow: 0 0 3px gray;
+        }
+
+        .round-button-circle:hover,
+        .round-button a:hover,
+        .round-button span:hover {
+            background: #463D0D;
+            color: #FCD508;
+        }
+
+        .round-button a,
+        .round-button span {
+            display: block;
+            float: right;
+            width: 100%;
+            padding-top: 50%;
+            padding-bottom: 50%;
+            line-height: 1em;
+            margin-top: -0.5em;
+
+            text-align: center;
+            color: #463D0D;
+            font-family: Verdana;
+            font-size: 1.9em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .screen {
+            width: 100%;
+            background-color: aqua;
+            height: 600px;
+        }
+
+        .scra {
+            background-color: #463D0D;
+            width: 100%;
+            height: 100px;
+            display: flexbox;
+        }
+
+        .btn1 {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn2 {
+            display: flex;
+            justify-content: center;
+
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="screen">
+        <div class="scra">
+            <input type="text">
+        </div>
+        <div class="constraint">
+            <div class="btn1">
+                <button class="round-button">
+                    <div class="round-button-circle">
+                        <span class="round-button">Test</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="btn1">
+                <button class="round-button">
+                    <div class="round-button-circle">
+                        <span class="round-button">Test</span>
+                    </div>
+                </button>
+            </div>
+
+
+            <div class="btn1">
+                <button class="round-button">
+                    <div class="round-button-circle">
+                        <span class="round-button">Test</span>
+                    </div>
+                </button>
+            </div>
+            <div class="btn1">
+                <button class="round-button">
+                    <div class="round-button-circle">
+                        <span class="round-button">Test</span>
+                    </div>
+                </button>
+            </div>
+            <div class="btn1">
+                <button class="round-button">
+                    <div class="round-button-circle">
+                        <span class="round-button">Test</span>
+                    </div>
+                </button>
+            </div>
+
+
+            <div class="constraint">
+
+                <div class="btn2">
+                    <button class="round-button">
+                        <div class="round-button-circle">
+                            <span class="round-button">Test</span>
+                        </div>
+                    </button>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

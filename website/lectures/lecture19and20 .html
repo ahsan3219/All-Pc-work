@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 19</title>
+</head>
+
+<body>
+
+
+    <h1>Lecture 19</h1>
+
+
+
+    <script>
+        //promt is string
+
+        //first method to convert string to a number
+        //let userNum = Number(promt("Guess any number"))
+
+        // let userNum = Number(alert("Guess any number"))
+
+        // //first method to convert string to a number
+        // //let userNum1 = parseInt(promt("Add same number again"))
+
+        // let userNum1 = parseInt(alert("Add same number again. Suppose we both guess same number"))
+        // let userA = alert("Add 50 more")
+        // let userC = alert("Half the total")
+
+        // let userB = alert("Return my number")
+        // document.write("You guess 25")
+
+        let obt = prompt("Enter your Obtain Marks")
+        let tot = prompt("Enter your Total Marks")
+        p = (obt / tot) * 100;
+        document.write("You percentage is " + p + "<br>");
+        if (p >= 80) {
+            document.write("You Get A-one grade")
+
+        }
+        else if (p >= 70 && p < 80) {
+            document.write("You get A grade")
+        }
+        else if (p >= 60 && p < 70) {
+            document.write("You get B grade")
+        }
+
+        else if (p >= 50 && p < 60) {
+            document.write("You get C grade")
+
+        }
+        else {
+            document.write("You are fail")
+        }
+
+
+
+        //Array
+        a = [1, 5, 7, "ahsan", "raza", true, "not", false];
+        document.write(a + "<br>")
+        document.write(a[1] + "<br>" + a[2] + "<br>" + a[3] + "<br>" + a[4] + "<br>" + a[5] + "<br>" + a[0] + "<br>")
+
+
+
+        //push or pop
+
+        //push add values at last
+
+
+        document.write("<h1>" + "push add value at last" + "<br>" + "</h1>")
+        c = [1, 4, "ahsan", "raza", 08, "ali", 75];
+        c.push("new", "work", 123)
+        document.write(c + "<br>")
+
+        //pop remove value from last
+
+
+        document.write("<h1>" + "pop remove value from last" + "<br>" + "</h1>")
+        c.pop(123, "work", "new")
+        document.write(c + "<br>")
+
+
+        //Shift and Unshif
+
+
+        //shift remove first value
+        document.write("<h1>" + "shift remove first value" + "<br>" + "</h1>")
+        d = [12, "45", "ahsan", "raza", "king"]
+        document.write(d + "<br>")
+        d.shift()
+        document.write(d)
+
+        //unshif add value at start
+
+        document.write("<h1>" + "unshift add first value" + "<br>" + "</h1>")
+        d = [12, "45", "ahsan", "raza", "king"]
+        document.write(d + "<br>")
+        d.unshift("mango", "banana", 123)
+        document.write(d)
+
+
+        //splice add and replace value from array
+        document.write("<h1>" + "Splice remove or replace value of array with new one" + "<br>" + "</h1>")
+        e = [1, 3, 4, 6, 7, 8, "a", "b", "c", "d", "e", d]
+        document.write(e + "<br>")
+        //e.splice(index,number of value want to delete)
+        e.splice(6, 5)
+        document.write(e + "<br>")
+        e.splice(4, 2, "Ahsan1", "Ahsan2", "Ahsan3", "Ahsan4", "Ahsan5")
+        document.write(e + "<br>")
+
+        //slice make a new array with same values
+
+        let f = ["a", "b", "c", "d", "e", "f", "g", "h"]
+        document.write(f + "<br>")
+        //f.slice(Index jahan sa copy karna ha ,length of array jitni copy karni ha )
+        let g = f.slice(2, 5)
+        document.write(g)
+
+
+    </script>
+</body>
+
+</html>

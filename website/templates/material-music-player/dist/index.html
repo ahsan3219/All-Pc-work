@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CodePen - Material Music Player</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet'
+		href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.css'>
+	<link rel='stylesheet'
+		href='https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css'>
+	<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+	<!-- partial:index.partial.html -->
+	<div class="hero__backgorund owl-carousel">
+		<div class="item" style="background: #3F51B5"></div>
+		<div class="item" style="background: #8BC34A"></div>
+		<div class="item" style="background: #673AB7"></div>
+		<div class="item" style="background: #E91E63"></div>
+	</div>
+
+
+
+	<div class="main__container">
+		<div class="contain__wrapper">
+			<div class="music__wrapper">
+				<div class="left__panel">
+					<div class="cover owl-carousel">
+						<div class="item">
+							<input type="text" style="margin: 10%; border-radius: 15px 0px 0px 15px; padding: 5px; "
+								placeholder="surah name" name="" id="surah">
+							<!-- <input type="submit" style="background-color: black; color: aliceblue;" name="" id="">
+	 -->
+							<button style="background-color: black; color: aliceblue;"
+								onclick="doSuarh(); return false">Submit</button>
+							<button id="abc" style="margin-left: 50%;">Check</button>
+							<div id="language"></div>
+
+							<!-- <select name="" id="language">
+								<option value="" disabled>Select Language</option>
+								<option value="eng">English</option>
+								<option value="ar">Arabic</option>
+								<option value="ur">Urdu</option>
+								<option value="">Spanish</option>
+								<option value="">German</option>
+							</select> -->
+
+							<div id="recite"></div>
+							<!-- <select name="" id="">
+								<option value="Ibrahim Al-Akdar">Ibrahim Al-Akdar</option>
+								<option value="Akram Alalaqmi">Akram Alalaqmi</option>
+								<option value="Mohammad Saleh Alim Shah">Mohammad Saleh Alim Shah</option>
+								<option value="Mohammed Jibreel"></option>
+								<option value=""></option>
+								<option value=""></option>
+
+							</select> -->
+
+
+						</div>
+						<div class="item">
+						</div>
+						<div class="item">
+						</div>
+						<div class="item">
+						</div>
+					</div>
+				</div>
+
+				<div class="right__panel">
+					<div class="music__info__wrapper">
+						<div class="header">
+							<div class="icon__wrapper">
+
+								<span class="icon-right"><i class="zmdi zmdi-apps"></i></span>
+								<div class="title owl-carousel">
+									<div class="item">
+										<div class="song__name">Sorry The Movement</div>
+										<p class="album__name" id="reciter"></p>
+									</div>
+									<div class="item">
+										<div class="song__name">Passenger Let Her Go</div>
+										<p class="album__name">Passenger</p>
+									</div>
+									<div class="item">
+										<div class="song__name">Counting Stars...</div>
+										<p class="album__name">OneRepublic</p>
+									</div>
+									<div class="item">
+										<div class="song__name">Waiting For Love</div>
+										<p class="album__name">Avicii</p>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!-- 
+						<div class="music__control">
+							<div class="music__button">
+								<span class="button__prev"><i class="zmdi zmdi-fast-rewind"></i></span>
+								<span class="button__pause"><i class="zmdi zmdi-pause"></i></span>
+								<span class="button__next"><i class="zmdi zmdi-fast-forward"></i></span>
+								<div>
+									<input type="range" min="0" max="50" value="10" step="1" />
+								</div>
+
+							</div>
+						</div>
+					</div> -->
+
+
+
+
+
+
+
+						<div class="music__menu">
+							<span class="icon-right"><i class="zmdi zmdi-close"></i></span>
+							<span class="menu_list"><i class="zmdi zmdi-favorite"></i>Faverate</span>
+							<span class="menu_list" id="sorah"><i class="zmdi zmdi-audio"></i> Select Sorah
+							</span>
+							<span class="menu_list"><i class="zmdi zmdi-view-carousel"></i>Album</span>
+							<span class="menu_list"><i class="zmdi zmdi-time-restore"></i>History</span>
+							<span class="menu_list"><i class="zmdi zmdi-shopping-cart"></i>Cart</span>
+							<span class="menu_list"><i class="zmdi zmdi-settings"></i>Account</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- partial -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src='https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js'></script>
+		<script src="./script.js"></script>
+</body>
+
+</html>

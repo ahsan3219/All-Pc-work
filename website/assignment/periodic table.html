@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Periodic Table</title>
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        table {
+            border-color: aliceblue;
+            border-style: solid;
+        }
+
+        .zoom {
+            transition: transform .2s;
+        }
+
+        .zoom:hover {
+            transform: scale(2.0);
+            /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+
+        td {
+            width: 80px;
+            height: 30px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <h1>Periodic Table By Ahsan Raza</h1>
+    </center>
+
+
+    <table border="1px">
+        <tr>
+            <div class="zoom">
+                <td bgcolor="lightblue">
+                    <center>
+                        <div class="zoom">
+                            <h1><sup>
+                                    <center>1</center>
+                                </sup>H </h1>
+                    </center>
+            </div>
+            </td>
+
+            <td colspan="16"></td>
+            <td bgcolor="fushsia">
+                <center>
+                    <div class="zoom">
+
+                        <h1><sup>
+                                <center>2</center>
+                            </sup>He </h1>
+                    </div>
+                </center>
+            </td>
+
+        </tr>
+        <tr>
+            <td bgcolor="blue">
+                <center>
+                    <div class="zoom">
+                        <h1><sup>
+                                <center>3</center>
+                            </sup>Li </h1>
+                </center>
+                </div>
+            </td>
+            <td bgcolor="darkpink">
+                <center>
+                    <div class="zoom">
+                        <h1><sup>
+                                <center>4</center>
+                            </sup>Be </h1>
+                </center>
+                </div>
+            </td>
+            <td colspan="10"></td>
+            <td bgcolor="#33CC99">
+                <center>
+                    <div class="zoom">
+                        <h1><sup>
+                                <center>5</center>
+                            </sup>B </h1>
+                </center>
+            </td>
+            </div>
+            <td bgcolor="#33CC99">
+                <center>
+                    <div class="zoom">
+                        <h1><sup>
+                                <center>6</center>
+                            </sup>C </h1>
+                </center>
+                </div>
+            </td>
+            <td bgcolor="#33CC99">
+                <center>
+                    <h1><sup>
+                            <center>7</center>
+                        </sup>N </h1>
+                </center>
+            </td>
+            <td bgcolor="aqua">
+                <center>
+                    <h1><sup>
+                            <center>8</center>
+                        </sup>O </h1>
+                </center>
+            </td>
+            <td bgcolor="lime">
+                <center>
+                    <h1><sup>
+                            <center>9</center>
+                        </sup>F</h1>
+                </center>
+            </td>
+            <td bgcolor="fushsia">
+                <center>
+                    <h1><sup>
+                            <center>10</center>
+                        </sup>Ne</h1>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="blue">
+                <center>
+                    <h1><sup>
+                            <center>11</center>
+                        </sup>Na </h1>
+                </center>
+            </td>
+            <td bgcolor="darkpink">
+                <center>
+                    <h1><sup>
+                            <center>12</center>
+                        </sup>Mg </h1>
+                </center>
+            </td>
+            <td colspan="10"></td>
+            <td bgcolor="olive">
+                <center>
+                    <h1><sup>
+                            <center>13</center>
+                        </sup>Al </h1>
+                </center>
+            </td>
+            <td bgcolor="#33CC99">
+                <center>
+                    <h1><sup>
+                            <center>14</center>
+                        </sup>Si</h1>
+                </center>
+            </td>
+            <td bgcolor="#33CC99">
+                <center>
+                    <h1><sup>
+                            <center>15</center>
+                        </sup>P </h1>
+                </center>
+            </td>
+            <td bgcolor="aqua">
+                <center>
+                    <h1><sup>
+                            <center>16</center>
+                        </sup>S</h1>
+                </center>
+            </td>
+            <td bgcolor="lime">
+                <center>
+                    <h1><sup>
+                            <center>17</center>
+                        </sup>Cl</h1>
+                </center>
+            </td>
+            <td bgcolor="fushsia">
+                <center>
+                    <h1><sup>
+                            <center>18</center>
+                        </sup>Ar</h1>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="blue">
+                <center>
+                    <h1><sup>
+                            <center>19</center>
+                        </sup>K </h1>
+                </center>
+            </td>
+            <td bgcolor="darkpink">
+                <center>
+                    <h1><sup>
+                            <center>20</center>
+                        </sup>Ca </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>21</center>
+                        </sup>Sc</h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>22</center>
+                        </sup>Ti </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>23</center>
+                        </sup>V </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>24</center>
+                        </sup>Cr </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>25</center>
+                        </sup>Mn </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>26</center>
+                        </sup>Fe</h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>27</center>
+                        </sup>Co </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>28</center>
+                        </sup>Ni </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>29</center>
+                        </sup>Cu </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>30</center>
+                        </sup>Zn </h1>
+                </center>
+            </td>
+
+
+            <td bgcolor="olive">
+                <center>
+                    <h1><sup>
+                            <center>31</center>
+                        </sup>Ga </h1>
+                </center>
+            </td>
+            <td bgcolor="#33CC99">
+                <center>
+                    <h1><sup>
+                            <center>32</center>
+                        </sup>Ge </h1>
+                </center>
+            </td>
+            <td bgcolor="#33CC99">
+                <center>
+                    <h1><sup>
+                            <center>33</center>
+                        </sup>As </h1>
+                </center>
+            </td>
+            <td bgcolor="aqua">
+                <center>
+                    <h1><sup>
+                            <center>34</center>
+                        </sup>Se</h1>
+                </center>
+            </td>
+            <td bgcolor="lime">
+                <center>
+                    <h1><sup>
+                            <center>35</center>
+                        </sup>Br</h1>
+                </center>
+            </td>
+            <td bgcolor="fushsia">
+                <center>
+                    <h1><sup>
+                            <center>36</center>
+                        </sup>Kr</h1>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="blue">
+                <center>
+                    <h1><sup>
+                            <center>37</center>
+                        </sup>Rb </h1>
+                </center>
+            </td>
+            <td bgcolor="darkpink">
+                <center>
+                    <h1><sup>
+                            <center>38</center>
+                        </sup>Sr </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>39</center>
+                        </sup>Y </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>40</center>
+                        </sup>Zr </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>41</center>
+                        </sup>Nb </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>42</center>
+                        </sup>Mo</h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>43</center>
+                        </sup>Tc</h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>44</center>
+                        </sup>Ru</h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>45</center>
+                        </sup>Rh </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>46</center>
+                        </sup>Pd</h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>47</center>
+                        </sup>Ag </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>48</center>
+                        </sup>Cd</h1>
+                </center>
+            </td>
+            <td bgcolor="olive">
+                <center>
+                    <h1><sup>
+                            <center>49</center>
+                        </sup>In </h1>
+                </center>
+            </td>
+            <td bgcolor="olive">
+                <center>
+                    <h1><sup>
+                            <center>50</center>
+                        </sup>Sn</h1>
+                </center>
+            </td>
+
+            <td bgcolor="#33CC99">
+                <center>
+                    <h1><sup>
+                            <center>51</center>
+                        </sup>Sb</h1>
+                </center>
+            </td>
+            <td bgcolor="#33CC99">
+                <center>
+                    <h1><sup>
+                            <center>52</center>
+                        </sup>Te</h1>
+                </center>
+            </td>
+            <td bgcolor="lime">
+                <center>
+                    <h1><sup>
+                            <center>53</center>
+                        </sup>I</h1>
+                </center>
+            </td>
+            <td bgcolor="fushsia">
+                <center>
+                    <h1><sup>
+                            <center>54</center>
+                        </sup>Xe </h1>
+                </center>
+            </td>
+
+        </tr>
+        <tr>
+            <td bgcolor="blue">
+                <center>
+                    <h1><sup>
+                            <center>55</center>
+                        </sup>Cs </h1>
+                </center>
+            </td>
+            <td bgcolor="darkpink">
+                <center>
+                    <h1><sup>
+                            <center>56</center>
+                        </sup>Ba </h1>
+                </center>
+            </td>
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center></center>
+                        </sup>* </h1>
+                </center>
+            </td bgcolor="#f1901">
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>72</center>
+                        </sup>Hf </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>73</center>
+                        </sup>Ta </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>74</center>
+                        </sup>W </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>75</center>
+                        </sup>Re </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>76</center>
+                        </sup>Os</h1>
+                </center>
+            </td bgcolor="#f1901">
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>77</center>
+                        </sup>Ir</h1>
+                </center>
+            </td bgcolor="#f1901">
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>78</center>
+                        </sup>Pt</h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>79</center>
+                        </sup>Au</h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>80</center>
+                        </sup>Hg</h1>
+                </center>
+            </td>
+            <td bgcolor="olive">
+                <center>
+                    <h1><sup>
+                            <center>81</center>
+                        </sup>Tl</h1>
+                </center>
+            </td>
+            <td bgcolor="olive">
+                <center>
+                    <h1><sup>
+                            <center>82</center>
+                        </sup>Pb </h1>
+                </center>
+            </td>
+
+            <td bgcolor="olive">
+                <center>
+                    <h1><sup>
+                            <center>83</center>
+                        </sup>Bi</h1>
+                </center>
+            </td>
+            <td bgcolor="#33CC99">
+                <center>
+                    <h1><sup>
+                            <center>84</center>
+                        </sup>Po</h1>
+                </center>
+            </td>
+            <td bgcolor="lime">
+                <center>
+                    <h1><sup>
+                            <center>85</center>
+                        </sup>At </h1>
+                </center>
+            </td>
+            <td bgcolor="fushsia">
+                <center>
+                    <h1><sup>
+                            <center>86</center>
+                        </sup>Rn</h1>
+                </center>
+            </td>
+
+        </tr>
+        <tr>
+            <td bgcolor="blue">
+                <center>
+                    <h1><sup>
+                            <center>87</center>
+                        </sup>Fr </h1>
+                </center>
+            </td>
+            <td bgcolor="darkpink">
+                <center>
+                    <h1><sup>
+                            <center>88</center>
+                        </sup>Ra </h1>
+                </center>
+            </td>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center></center>
+                        </sup>** </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>104</center>
+                        </sup>Rf </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>105</center>
+                        </sup>Db </h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>106</center>
+                        </sup>Sg</h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>107</center>
+                        </sup>Bh</h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>108</center>
+                        </sup>Hs</h1>
+                </center>
+            </td>
+
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>109</center>
+                        </sup>Mt </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>110</center>
+                        </sup>Ds </h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>111</center>
+                        </sup>Rg</h1>
+                </center>
+            </td>
+            <td bgcolor="#f1901">
+                <center>
+                    <h1><sup>
+                            <center>112</center>
+                        </sup>Cn</h1>
+                </center>
+            </td>
+            <td bgcolor="grey">
+                <center>
+                    <h1><sup>
+                            <center>113</center>
+                        </sup>Hn</h1>
+                </center>
+            </td>
+            <td bgcolor="grey">
+                <center>
+                    <h1><sup>
+                            <center>114</center>
+                        </sup>Fl</h1>
+                </center>
+            </td>
+
+            <td bgcolor="grey">
+                <center>
+                    <h1><sup>
+                            <center>115</center>
+                        </sup>Mc </h1>
+                </center>
+            </td>
+            <td bgcolor="grey">
+                <center>
+                    <h1><sup>
+                            <center>116</center>
+                        </sup>Lv</h1>
+                </center>
+            </td>
+            <td bgcolor="grey">
+                <center>
+                    <h1><sup>
+                            <center>117</center>
+                        </sup>Ts</h1>
+                </center>
+            </td>
+            <td bgcolor="grey">
+                <center>
+                    <h1><sup>
+                            <center>118</center>
+                        </sup>Og </h1>
+                </center>
+            </td>
+
+        </tr>
+
+
+
+
+
+
+
+
+
+    </table>
+
+    <br><br><br><br>
+    <table border="1px">
+
+        <tr>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>57</center>
+                        </sup>Ac</h1>
+                </center>
+            </td>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>58</center>
+                        </sup>Th</h1>
+                </center>
+            </td>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>59</center>
+                        </sup>Pa</h1>
+                </center>
+            </td>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>60</center>
+                        </sup>Np </h1>
+                </center>
+            </td>
+
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>61</center>
+                        </sup>Pu</h1>
+                </center>
+            </td>
+
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>62</center>
+                        </sup>Am</h1>
+                </center>
+            </td>
+
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>63</center>
+                        </sup>Cm </h1>
+                </center>
+            </td>
+
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>64</center>
+                        </sup>Bk</h1>
+                </center>
+            </td>
+
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>65</center>
+                        </sup>Cf</h1>
+                </center>
+            </td>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>66</center>
+                        </sup>Es</h1>
+                </center>
+            </td>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>67</center>
+                        </sup>Fm</h1>
+                </center>
+            </td>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>68</center>
+                        </sup>Md</h1>
+                </center>
+            </td>
+
+
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>69</center>
+                        </sup>No </h1>
+                </center>
+            </td>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>70</center>
+                        </sup>Lr</h1>
+                </center>
+            </td>
+            <td bgcolor="purple">
+                <center>
+                    <h1><sup>
+                            <center>71</center>
+                        </sup>As </h1>
+                </center>
+            </td>
+
+        </tr>
+
+        <tr>
+            >
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>89</center>
+                        </sup>La </h1>
+                </center>
+            </td>
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>90</center>
+                        </sup>Ce</h1>
+                </center>
+            </td>
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>91</center>
+                        </sup>Pr</h1>
+                </center>
+            </td>
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>92</center>
+                        </sup>Nd</h1>
+                </center>
+            </td>
+
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>93</center>
+                        </sup>Pm </h1>
+                </center>
+            </td>
+
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>94</center>
+                        </sup>Sm</h1>
+                </center>
+            </td>
+
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>95</center>
+                        </sup>Eu</h1>
+                </center>
+            </td>
+
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>96</center>
+                        </sup>Gd</h1>
+                </center>
+            </td>
+
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>97</center>
+                        </sup>Tb</h1>
+                </center>
+            </td>
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>98</center>
+                        </sup>Dy</h1>
+                </center>
+            </td>
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>99</center>
+                        </sup>Ho </h1>
+                </center>
+            </td>
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>100</center>
+                        </sup>Er</h1>
+                </center>
+            </td>
+
+
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>101</center>
+                        </sup>Tm </h1>
+                </center>
+            </td>
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>102</center>
+                        </sup>Yb</h1>
+                </center>
+            </td>
+            <td bgcolor="darkblue">
+                <center>
+                    <h1><sup>
+                            <center>103</center>
+                        </sup>Lu</h1>
+                </center>
+            </td>
+
+        </tr>
+
+
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            background-image: url('https://cdn.pixabay.com/photo/2013/07/13/10/24/board-157165_960_720.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="all"
+        style="border: 2px solid black; justify-content: center; border-radius: 25px; padding: 10px; width: 50%; margin-left: 25%; background-color: rgb(231, 119, 119); color: aliceblue; box-shadow: 2px 4px 6px 3px inset; margin-top: 10%; height: auto;">
+        <form onsubmit="postTodo(); return false">
+            <h1>Todo App with server</h1>
+
+            todo: <input id="todo" type="text" required>
+            <button type="submit">Add</button>
+        </form>
+        <button onclick="getAllTodos()">Refresh</button>
+        <button onclick="deleteAllTodos()">Delete All</button>
+
+        <h5 id="message" style="height:20px; color: red;"> </h5>
+
+        <h3 id="result"> </h3>
+    </div>
+    <script>
+
+        let baseUrl =
+            (document.location.protocol === 'https:') ?
+                "https://ewewe.cyclic.app"
+                :
+                "http://localhost:3000";
+
+
+        function postTodo() {
+            let todoText = document.querySelector("#todo").value
+
+            // document.querySelector("#result").innerHTML += todoText;
+            // document.querySelector("#result").innerHTML += '<br>';
+
+            axios.post(`${baseUrl}/todo`, {
+                text: todoText
+            })
+                .then(function (response) {
+                    console.log(response.data);
+
+                    getAllTodos();
+
+                    document.querySelector("#message").innerHTML = response.data.message
+                    setTimeout(() => {
+                        document.querySelector("#message").innerHTML = "";
+                    }, 2000);
+
+                    // response.data.data.map(eachTodo => {
+                    //     document.querySelector("#result").innerHTML += eachTodo
+                    //     document.querySelector("#result").innerHTML += '<br>'
+                    // })
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+
+        }
+
+        function getAllTodos() {
+            axios.get(`${baseUrl}/todos`)
+                .then(function (response) {
+                    console.log(response.data);
+
+                    document.querySelector("#result").innerHTML = ""
+
+                    response.data.data.map(eachTodo => {
+                        document.querySelector("#result").innerHTML += `<div style="border:1px solid black; border-radius:10px; margin-top:5px; padding:10px;"><span id='span-${eachTodo._id}'> ${eachTodo.text} </span><form id='form-${eachTodo._id}' style="display: none;" onsubmit="updateTodo('${eachTodo._id}'); return false"> 
+                                <input id='input-${eachTodo._id}' value='${eachTodo.text}'  />
+                                <button type="submit">Update</button>
+                                
+                            </form>&nbsp;&nbsp;<i class="fa fa-close" onclick="deleteTodo('${eachTodo._id}')" id='delete-${eachTodo._id}' style="margin-bottom:5%;font-size:48px;color:red; margin-left:70%;"></i> 
+                            <button onclick="editTodo('${eachTodo._id}')" id='edit-${eachTodo._id}'> Edit </button></div><br>`
+                        // document.querySelector("#result").innerHTML += `<span id='span-${eachTodo._id}'> ${eachTodo.text} </span>`;
+                        // document.querySelector("#result").innerHTML +=
+                        //     `<form id='form-${eachTodo._id}' style="display: none;" onsubmit="updateTodo('${eachTodo._id}'); return false"> 
+                        //         <input id='input-${eachTodo._id}' value='${eachTodo.text}'  />
+                        //         <button type="submit">Update</button>
+                        //     </form>`;
+
+                        // document.querySelector("#result").innerHTML +=
+                        //     `&nbsp;&nbsp; <button onclick="deleteTodo('${eachTodo._id}')" id='delete-${eachTodo._id}'> Delete </button>
+                        //     <button onclick="editTodo('${eachTodo._id}')" id='edit-${eachTodo._id}'> Edit </button>`
+
+                        // document.querySelector("#result").innerHTML += '<br>'
+                    })
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+
+        getAllTodos();
+        setInterval(getAllTodos, 10000);
+
+        let deleteTodo = async (id) => {
+            try {
+                let response = await axios.delete(`${baseUrl}/todo/${id}`)
+
+                document.querySelector("#message").innerHTML = response.data.message
+                setTimeout(() => {
+                    document.querySelector("#message").innerHTML = ""
+                }, 2000);
+
+                getAllTodos();
+
+            } catch (error) {
+                console.log("error: ", error);
+            }
+
+
+        }
+        let deleteAllTodos = async () => {
+            try {
+                let response = await axios.delete(`${baseUrl}/todos`)
+
+                document.querySelector("#message").innerHTML = response.data.message
+                setTimeout(() => {
+                    document.querySelector("#message").innerHTML = ""
+                }, 2000);
+
+                document.querySelector("#result").innerHTML = "";
+
+            } catch (error) {
+                console.log("error: ", error);
+            }
+
+
+        }
+
+
+        let editTodo = async (id) => {
+
+            console.log("edit id: ", id)
+            document.querySelector(`#form-${id}`).style.display = "inline"
+
+            document.querySelector(`#span-${id}`).style.display = "none"
+            document.querySelector(`#delete-${id}`).style.display = "none"
+            document.querySelector(`#edit-${id}`).style.display = "none"
+        }
+
+        let updateTodo = async (id) => {
+            console.log("update id: ", id)
+
+            let updatedText = document.querySelector(`#input-${id}`).value
+
+            try {
+                let response = await axios.put(`${baseUrl}/todo/${id}`,
+                    {
+                        text: updatedText
+                    })
+
+                document.querySelector("#message").innerHTML = response.data.message
+                setTimeout(() => {
+                    document.querySelector("#message").innerHTML = ""
+                }, 2000);
+
+                getAllTodos();
+
+            } catch (error) {
+                console.log("error: ", error);
+            }
+
+
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        h1:hover {
+            background-color: aliceblue;
+            color: black;
+            width: 350px;
+        }
+        
+        table {
+            border-color: aliceblue;
+            width: 400px;
+            text-align: center;
+            position: relative;
+            height: 30px;
+        }
+        
+        th:hover {
+            border-color: aliceblue;
+            width: 400px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            position: relative;
+            height: 30px;
+        }
+        
+        tr:hover {
+            background-color: #fff;
+            color: black;
+            border-color: black;
+        }
+        
+        img {
+            opacity: 10%;
+        }
+        
+        a {
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        a:hover {
+            color: black;
+            font-weight: bold;
+        }
+        
+        img:hover {
+            opacity: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Table row tr</h1>
+    <h1>Table heading th</h1>
+    <h1>Table data td</h1>
+    <center>
+        <table border="3px">
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Year</th>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>Mesum</td>
+                <td>Seven</td>
+                <td>2022</td>
+                <td>Computer</td>
+                <td>A-one</td>
+            </tr>
+            <tr>
+                <td>Mesum1</td>
+                <td>Seven1</td>
+                <td>2022</td>
+                <td>Computer</td>
+                <td>A-one1</td>
+            </tr>
+            <tr>
+                <td>Mesum2</td>
+                <td>Seven2</td>
+                <td>2022</td>
+                <td>Computer</td>
+                <td>A-one</td>
+            </tr>
+        </table>
+    </center>
+    <BR>
+    <BR>
+    <BR></BR>
+    </BR>
+    </BR>
+    <center>
+        <table border="3px">
+            <tr>
+                <th>S.No</th>
+                <th>Profile Link</th>
+                <th>Profile Name</th>
+                <th>Adress</th>
+                <th>Image</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <a href="https://www.facebook.com/groups/515948611820094/user/100002709085624/" target="_blank">Proifle Link</a>
+                </td>
+                <td>Faheem Khan</td>
+                <td>Karachi</td>
+                <td>
+                    <a href="../icons/facebook.png" target="_blank"><img width="100px" src="../icons/facebook.png">
+                </td>
+                </a>
+            </tr>
+            <td>2</td>
+            <td>
+                <a href="https://www.facebook.com/groups/515948611820094/user/100002709085624/" target="_blank">Proifle
+                    Link</a>
+            </td>
+            <td>Faheem Khan</td>
+            <td>Karachi</td>
+            <td>
+                <a href="../icons/instagram.png" target="_blank"><img width="100px" src="../icons/instagram.png">
+            </td>
+            </a>
+            </tr>
+            <td>3</td>
+            <td>
+                <a href="https://www.facebook.com/groups/515948611820094/user/100002709085624/" target="_blank">Proifle
+                    Link</a>
+            </td>
+            <td>Faheem Khan</td>
+            <td>Karachi</td>
+            <td>
+                <a href="../icons/google.png" target="_blank"><img width="100px" src="../icons/google.png">
+            </td>
+            </a>
+            </tr>
+        </table>
+    </center>
+    <br><br>
+    <br><br>
+    <center>
+        <table border="3px">
+            <tr>
+                <th></th>
+                <th>9:00</th>
+                <th>10:00</th>
+                <th>11:00</th>
+                <th>12:00</th>
+            </tr>
+            <tr>
+                <th>Monday</th>
+                <td colspan="2">Geography</td>
+                <td>Politics</td>
+                <td>A-one</td>
+            </tr>
+            <tr>
+                <th>Tuesday</th>
+                <td colspan="3">Mathematics</td>
+                <td>Politics</td>
+
+            </tr>
+            <tr>
+                <th>Monday</th>
+                <td>Geography</td>
+                <td>Politics</td>
+                <td colspan="2">A-one</td>
+
+            </tr>
+        </table>
+    </center>
+
+    <br><br><br><br><br><br>
+
+    <h1>Use colspan to adding two coloumns</h1>
+    <h1>Use rowspan to adding two rows</h1>
+    <br> <br><br>
+    <center>
+        <table border="3px">
+            <tr>
+                <th rowspan="3">Day</th>
+                <th colspan="3">Semninar</th>
+
+            </tr>
+            <tr>
+                <th colspan="2">Scedule </th>
+                <th rowspan="2">Topics</th>
+            </tr>
+            <tr>
+                <th>Begin</th>
+                <th>End</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Monday</td>
+                <td rowspan="2">8:00 a.m</td>
+                <td rowspan="2">5:00 p.m</td>
+                <td>Introduction to xml</td>
+
+            </tr>
+            <tr>
+                <td>validity</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Tuesday</td>
+                <td>8:00a.m</td>
+                <td>11:00 a.m</td>
+                <td rowspan="2">X path</td>
+            </tr>
+            <tr>
+                <td>11:00 a.m</td>
+                <td>2:p.m</td>
+            </tr>
+            <tr>
+                <td>2:00</td>
+
+                <td>5:00</td>
+                <td rowspan="1.5"> XLS transform</td>
+            </tr>
+            <tr>
+                <td> Weddnesday</td>
+                <td>8:00</td>
+                <td>12:00</td>
+                <td rowspan="1.5">XLM formating</td>
+            </tr>
+        </table>
+    </center>
+
+
+
+
+</body>
+
+</html>

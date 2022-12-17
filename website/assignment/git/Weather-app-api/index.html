@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        /* #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        } */
+
+        .content {
+            background-color: rgba(148, 253, 119, 0.8);
+            border-radius: .25em;
+            box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            width: 40%;
+            padding: 5%;
+            left: 30%;
+
+            height: auto;
+            position: relative;
+            margin-top: 1%;
+            text-align: center;
+
+
+
+
+
+
+            background: linear-gradient(45deg, #b658f1, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+            background-size: 600% 100%;
+            animation: gradient 16s linear infinite;
+            animation-direction: alternate;
+        }
+
+
+
+        .content1 {
+            display: flex;
+            background-color: rgba(148, 253, 119, 0.8);
+            border-radius: .25em;
+            box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            width: 40%;
+            padding: 5%;
+            left: 30%;
+            height: 20%;
+            position: relative;
+            margin-top: 3%;
+            font-size: large;
+            font-weight: bold;
+
+            text-align: center;
+
+            background: linear-gradient(45deg, #ffffff, #989898, #d2dff7);
+            background-size: 200% 100%;
+            animation: gradient 16s linear infinite;
+            animation-direction: alternate;
+            display: none;
+        }
+
+
+
+
+        .hea {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        button {
+            border: 2px #00DFF7 solid;
+            background-color: #00DFF7;
+            margin-left: 15%;
+            width: 20%;
+            color: aliceblue;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 250vh;
+
+            background: linear-gradient(45deg, #00bbff, #27DBB1);
+            /* background-size: 600% 100%;
+            animation: gradient 16s linear infinite;
+            animation-direction: alternate; */
+            background-size: 400;
+            animation: gradient 10s ease infinite;
+        }
+
+        .box {
+            position: relative;
+            position: absolute;
+
+            top: 20%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            animation: square 10s linear infinite;
+            animation-delay: calc(-1s * var(--i));
+        }
+
+        */ .square {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            animation: square 10s linear infinite;
+            animation-delay: calc(-1s * var(--i));
+
+        }
+
+        /* 
+        @keyframes square {
+
+            0%,
+            100% {
+                transform: translateY(-50px);
+            }
+
+            50% {
+                transform: translateY(90%);
+            }
+        } */
+
+        .square:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            top: 8%;
+            left: 100%;
+        }
+
+        .square:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 8%;
+            left: -107%;
+            z-index: 2;
+        }
+
+        /*.square:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 8%;
+            left: -55%;
+            z-index: 2;
+        }
+
+        .square:nth-child(4) {
+            width: 150px;
+            height: 150px;
+            top: 8%;
+            left: 155%;
+        }
+
+        .square:nth-child(5) {
+            width: 150px;
+            height: 150px;
+            top: 8%;
+            left: -160%;
+        }
+
+        .square:nth-child(6) {
+            width: 150px;
+            height: 150px;
+            top: 8%;
+            right: -53%;
+            z-index: 2;
+        }
+
+        .square:nth-child(7) {
+            width: 150px;
+            height: 150px;
+            top: 8%;
+            left: 208%;
+        } */
+        input {
+            border-radius: 6%;
+            margin-top: 1%;
+            width: 50%;
+            height: 10%;
+        }
+
+        .time {
+            display: flex;
+        }
+
+
+
+
+
+
+
+
+
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            margin-top: 0;
+        }
+
+        .padded {
+            padding: 100px 0;
+        }
+
+        .wrapper-grey {
+            background: #F4F4F4;
+        }
+
+        .avatar {
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        .avatar-bordered {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            border: white 1px solid;
+        }
+
+        .avatar-large {
+            width: 50px;
+        }
+
+        /* .banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 50px;
+} */
+
+        .card {
+            height: 250px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+            background-size: cover !important;
+            color: white;
+            position: relative;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .card-user {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .card-category {
+            position: absolute;
+            top: 10px;
+            left: 35%;
+            font-size: 20px;
+        }
+
+        .card-description {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .card-description h2 {
+            font-size: 22px;
+        }
+
+        .card-description p {
+            font-size: 15px;
+        }
+
+        .card-link {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 2;
+            background: black;
+            opacity: 0;
+        }
+
+        .card-link:hover {
+            opacity: 0.1;
+        }
+
+        .features img {
+            width: 100px;
+        }
+
+        .features h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .features p {
+            font-size: 15px;
+            font-weight: lighter;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="https://cdn.worldvectorlogo.com/logos/weather-ios.svg">
+</head>
+
+<body>
+    <!-- 
+    <video autoplay muted loop id="myVideo">
+        <source
+            src="Video by Naim Benjelloun from Pexels: https://www.pexels.com/video/the-rays-of-sun-in-a-clear-sky-2605326/"
+            type="video/mp4">
+    </video> -->
+
+    <section>
+
+        <div class="box">
+            <div class="hea">
+                <h1 style="color: aliceblue; display: inline-block; justify-content: center;  margin-right: 2%;  ">
+                    Weather</h1>
+                <h1 style="color: #FFEE58;  display: inline-block; ">Forecast</h1>
+            </div>
+            <!-- 
+            <div class="square" style="--i:0;"></div>
+            <div class="square" style="--i:1;"></div>
+              <div class="square" style="--i:2;"></div> -->
+
+            <!-- <div class="square" style="--i:3;"></div>
+              <div class="square" style="--i:4;"></div>
+              <div class="square" style="--i:5;"></div>
+              -->
+
+
+
+            <div class="content">
+                <form action="" onsubmit="getWeather(); return false">
+                    <div class="hea">
+                        <h2 style="color: yellow;">City Name:</h2> <input type="text" name="" id="city" required>
+
+                    </div>
+                    <div class="hea">
+                        <button onClick="showHideDv('content1')">Get Weather</button>
+                        <button
+                            onClick="showHideDiv('card','card1','card2','card3','card4','card5','card6','card7','card8','card9','card10','card11')">Get
+                            Hourly Weather</button>
+                    </div>
+                    <br>
+
+                </form>
+                <br>
+            </div>
+
+
+
+            <!-- 
+            <center>
+                <h1>Show/Hide Div on Button Click using JavaScript.</h1>
+                <input type="button" value="Show/Hide"
+                    onClick="showHideDiv('card','card','card1','card2','card3')" /><br><br>
+            </center> -->
+
+
+
+            <div class="container">
+                <h2 class="text-center">Your Weather</h2>
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName"></div>
+
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim">Time</p>
+                        </div>
+
+
+                        <div class="card-description">
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp">
+                                </p>
+                                Min-Temp :
+                                <p id="min"></p>
+                                Max-Temp : <p id="max"></p>
+                                Humidity : <p id="hum"></p>
+                                Feel : <p id="feel"></p>
+                            </div>
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card1"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName1"></div>
+
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim1">Time</p>
+                        </div>
+
+
+                        <div class="card-description">
+
+
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp1">
+                                </p>
+                                Min-Temp :
+                                <p id="min1"></p>
+                                Max-Temp : <p id="max1"></p>
+                                Humidity : <p id="hum1"></p>
+                                Feel : <p id="feel1"></p>
+                            </div>
+
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card2"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName2"></div>
+
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim2">Time</p>
+                        </div>
+
+                        <div class="card-description">
+
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp2">
+                                </p>
+                                Min-Temp :
+                                <p id="min2"></p>
+                                Max-Temp : <p id="max2"></p>
+                                Humidity : <p id="hum2"></p>
+                                Feel : <p id="feel2"></p>
+                            </div>
+
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card3"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName3"></div>
+
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim3">Time</p>
+                        </div>
+
+                        <div class="card-description">
+
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp3">
+                                </p>
+                                Min-Temp :
+                                <p id="min3"></p>
+                                Max-Temp : <p id="max3"></p>
+                                Humidity : <p id="hum3"></p>
+                                Feel : <p id="feel3"></p>
+                            </div>
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card4"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName4"></div>
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim4">Time</p>
+                        </div>
+
+
+                        <div class="card-description">
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp4">
+                                </p>
+                                Min-Temp :
+                                <p id="min4"></p>
+                                Max-Temp : <p id="max4"></p>
+                                Humidity : <p id="hum4"></p>
+                                Feel : <p id="feel4"></p>
+                            </div>
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card5"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName5"></div>
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim5">Time</p>
+                        </div>
+
+                        <div class="card-description">
+
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp5">
+                                </p>
+                                Min-Temp :
+                                <p id="min5"></p>
+                                Max-Temp : <p id="max5"></p>
+                                Humidity : <p id="hum5"></p>
+                                Feel : <p id="feel5"></p>
+                            </div>
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card6"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName6"></div>
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim6">Time</p>
+                        </div>
+
+                        <div class="card-description">
+
+
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp6">
+                                </p>
+                                Min-Temp :
+                                <p id="min6"></p>
+                                Max-Temp : <p id="max6"></p>
+                                Humidity : <p id="hum6"></p>
+                                Feel : <p id="feel6"></p>
+                            </div>
+
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card7"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName7"></div>
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim7">Time</p>
+                        </div>
+
+                        <div class="card-description">
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp7">
+                                </p>
+                                Min-Temp :
+                                <p id="min7"></p>
+                                Max-Temp : <p id="max7"></p>
+                                Humidity : <p id="hum7"></p>
+                                Feel : <p id="feel7"></p>
+                            </div>
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card8"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName8"></div>
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim8">Time</p>
+                        </div>
+
+
+                        <div class="card-description">
+
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp8">
+                                </p>
+                                Min-Temp :
+                                <p id="min8"></p>
+                                Max-Temp : <p id="max8"></p>
+                                Humidity : <p id="hum8"></p>
+                                Feel : <p id="feel8"></p>
+                            </div>
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card9"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName9"></div>
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim9">Time</p>
+                        </div>
+
+
+                        <div class="card-description">
+
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp9">
+                                </p>
+                                Min-Temp :
+                                <p id="min9"></p>
+                                Max-Temp : <p id="max9"></p>
+                                Humidity : <p id="hum9"></p>
+                                Feel : <p id="feel9"></p>
+                            </div>
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card10"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName10"></div>
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim10">Time</p>
+                        </div>
+
+                        <div class="card-description">
+
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp10">
+                                </p>
+                                Min-Temp :
+                                <p id="min10"></p>
+                                Max-Temp : <p id="max10"></p>
+                                Humidity : <p id="hum10"></p>
+                                Feel : <p id="feel10"></p>
+                            </div>
+
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card" id="card11"
+                        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=360');">
+                        <div class="card-category" id="cityName11"></div>
+
+                        <div class="tim">
+                            <p style="margin-left: 40%; padding-top: 15%;" id="tim11">Time</p>
+                        </div>
+                        <div class="card-description">
+
+
+
+                            <div class="c" style="font-size: 10px;">Temp : <p id="temp11">
+                                </p>
+                                Min-Temp :
+                                <p id="min11"></p>
+                                Max-Temp : <p id="max11"></p>
+                                Humidity : <p id="hum11"></p>
+                                Feel : <p id="feel11"></p>
+                            </div>
+
+                        </div>
+                        <img class="card-user avatar avatar-large"
+                            src="https://qph.cf2.quoracdn.net/main-qimg-df66cb2d49500876ca7a35522a2ade54">
+                        <a class="card-link" href="#"></a>
+                    </div>
+                </div>
+
+
+                <div class="content1" id="content1">
+
+
+                    <div class="card-category" id="cityName12" style="margin-left: 10%;"></div>
+
+
+                    <div class="tim">
+                        <p style="margin-left: 0%; padding-top: 15%;" id="tim12">Time</p>
+                    </div>
+
+                    Feel like :<p id="feel" style="display: inline-block;"></p>
+                    Humidity :<p id="humidity"></p>
+                    Temperature :<p id="temp"></p>
+                    Temp max :<p id="temp_max"></p>
+                    Temp min :<p id="temp_min"></p>
+
+
+                </div>
+                <!-- feels_like
+: 
+38.85
+humidity
+: 
+52
+pressure
+: 
+1000
+temp
+: 
+33.9
+temp_max
+: 
+33.9
+temp_min
+: 
+33.9 -->
+
+
+
+
+
+            </div>
+        </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script>
+
+
+
+
+
+
+        // a = new Date()
+        //         console.log(a)
+        //         b = a.toString()
+        //         c = b.slice(17, 25)
+        //         e = b.slice(18, 25)
+        //         console.log(e)
+        //         console.log(c)
+        //         d = parseInt(c)
+        //         console.log(d + 3 + e)
+
+
+        function getWeather() {
+            city = document.querySelector("#city").value;
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2baadce54194fdee21bed0ae9b7ab7a4&units=metric`)
+
+                .then(function (response) {
+                    // handle success
+
+                    // document.getElementsByClassName('card').style.display = "block";
+
+                    console.log(response.data)
+                    document.querySelector("#cityName").innerHTML = response.data.name;
+                    document.querySelector("#cityName1").innerHTML = response.data.name;
+                    document.querySelector("#cityName2").innerHTML = response.data.name;
+                    document.querySelector("#cityName3").innerHTML = response.data.name;
+                    document.querySelector("#cityName4").innerHTML = response.data.name;
+                    document.querySelector("#cityName5").innerHTML = response.data.name;
+                    document.querySelector("#cityName6").innerHTML = response.data.name;
+                    document.querySelector("#cityName7").innerHTML = response.data.name;
+                    document.querySelector("#cityName8").innerHTML = response.data.name;
+                    document.querySelector("#cityName9").innerHTML = response.data.name;
+                    document.querySelector("#cityName10").innerHTML = response.data.name;
+                    document.querySelector("#cityName11").innerHTML = response.data.name;
+                    document.querySelector("#cityName12").innerHTML = response.data.name;
+                    document.querySelector("#feel").innerHTML = response.data.main.feels_like + "°C";
+
+                    document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+                    document.querySelector("#temp").innerHTML = response.data.main.temp + "°C";
+                    document.querySelector("#temp_max").innerHTML = response.data.main.temp_max + "°C";
+                    document.querySelector("#temp_min").innerHTML = response.data.main.temp_min + "°C";
+
+
+
+
+
+                    a = new Date()
+                    b = a.toString()
+                    c = b.slice(17, 25)
+                    e = b.slice(18, 25)
+                    d = parseInt(c)
+                    ti1 = d + 3
+                    ti2 = ti1 + 3;
+                    ti3 = ti2 + 3;
+                    ti4 = ti3 + 3;
+                    ti5 = ti4 + 3; ti6 = ti5 + 3; ti7 = ti6 + 3; ti8 = ti7 + 3; ti9 = ti8 + 3; ti10 = ti9 + 3; ti11 = ti10 + 3;
+                    tim1 = ti1 + e;
+                    tim2 = ti2 + e; tim3 = ti3 + e; tim4 = ti4 + e; tim5 = ti5 + e; tim6 = ti6 + e; tim7 = ti7 + e; tim8 = ti8 + e; tim9 = ti9 + e; tim10 = ti10 + e; tim11 = ti11 + e;
+                    tim12 = c
+                    document.querySelector("#tim").innerHTML = c
+
+                    document.querySelector("#tim1").innerHTML = tim1
+                    document.querySelector("#tim2").innerHTML = tim2
+                    document.querySelector("#tim3").innerHTML = tim3
+                    document.querySelector("#tim4").innerHTML = tim4
+                    document.querySelector("#tim5").innerHTML = tim5
+                    document.querySelector("#tim6").innerHTML = tim6
+                    document.querySelector("#tim7").innerHTML = tim7
+                    document.querySelector("#tim8").innerHTML = tim8
+                    document.querySelector("#tim9").innerHTML = tim9
+                    document.querySelector("#tim10").innerHTML = tim10
+                    document.querySelector("#tim11").innerHTML = tim11
+                    document.querySelector("#tim12").innerHTML = tim12
+
+
+
+                    // document.querySelector("#r").innerHTML = a
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+
+
+
+
+            //            Hourly Weather
+            axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=2baadce54194fdee21bed0ae9b7ab7a4&units=metric`)
+
+                .then(function (response) {
+                    // handle success
+
+                    // document.getElementsByClassName('card').style.display = "block";
+
+                    console.log("Hourly", response.data)
+
+
+                    document.querySelector("#temp").innerHTML = response.data.list[0].main.temp + " °C";
+                    document.querySelector("#min").innerHTML = response.data.list[0].main.temp_min + " °C";
+                    document.querySelector("#max").innerHTML = response.data.list[0].main.temp_max + " °C";
+                    document.querySelector("#hum").innerHTML = response.data.list[0].main.humidity;
+                    document.querySelector("#feel").innerHTML = response.data.list[0].main.feels_like + " °C";
+
+
+
+                    document.querySelector("#temp1").innerHTML = response.data.list[3].main.temp + " °C";
+                    document.querySelector("#min1").innerHTML = response.data.list[3].main.temp_min + " °C";
+                    document.querySelector("#max1").innerHTML = response.data.list[3].main.temp_max + " °C";
+                    document.querySelector("#hum1").innerHTML = response.data.list[3].main.humidity;
+                    document.querySelector("#feel1").innerHTML = response.data.list[3].main.feels_like + " °C";
+
+
+
+
+                    document.querySelector("#temp2").innerHTML = response.data.list[7].main.temp + " °C";
+                    document.querySelector("#min2").innerHTML = response.data.list[7].main.temp_min + " °C";
+                    document.querySelector("#max2").innerHTML = response.data.list[7].main.temp_max + " °C";
+                    document.querySelector("#hum2").innerHTML = response.data.list[7].main.humidity;
+                    document.querySelector("#feel2").innerHTML = response.data.list[7].main.feels_like + " °C";
+
+
+
+
+
+                    document.querySelector("#temp3").innerHTML = response.data.list[10].main.temp + " °C";
+                    document.querySelector("#min3").innerHTML = response.data.list[10].main.temp_min + " °C";
+                    document.querySelector("#max3").innerHTML = response.data.list[10].main.temp_max + " °C";
+                    document.querySelector("#hum3").innerHTML = response.data.list[10].main.humidity;
+                    document.querySelector("#feel3").innerHTML = response.data.list[10].main.feels_like + " °C";
+
+
+
+
+
+                    document.querySelector("#temp4").innerHTML = response.data.list[13].main.temp + " °C";
+                    document.querySelector("#min4").innerHTML = response.data.list[13].main.temp_min + " °C";
+                    document.querySelector("#max4").innerHTML = response.data.list[13].main.temp_max + " °C";
+                    document.querySelector("#hum4").innerHTML = response.data.list[13].main.humidity;
+                    document.querySelector("#feel4").innerHTML = response.data.list[13].main.feels_like + " °C";
+
+
+
+
+
+                    document.querySelector("#temp5").innerHTML = response.data.list[17].main.temp + " °C";
+                    document.querySelector("#min5").innerHTML = response.data.list[17].main.temp_min + " °C";
+                    document.querySelector("#max5").innerHTML = response.data.list[17].main.temp_max + " °C";
+                    document.querySelector("#hum5").innerHTML = response.data.list[17].main.humidity;
+                    document.querySelector("#feel5").innerHTML = response.data.list[17].main.feels_like + " °C";
+
+
+
+
+                    document.querySelector("#temp6").innerHTML = response.data.list[21].main.temp + " °C";
+                    document.querySelector("#min6").innerHTML = response.data.list[21].main.temp_min + " °C";
+                    document.querySelector("#max6").innerHTML = response.data.list[21].main.temp_max + " °C";
+                    document.querySelector("#hum6").innerHTML = response.data.list[21].main.humidity;
+                    document.querySelector("#feel6").innerHTML = response.data.list[21].main.feels_like + " °C";
+
+
+
+
+                    document.querySelector("#temp7").innerHTML = response.data.list[25].main.temp + " °C";
+                    document.querySelector("#min7").innerHTML = response.data.list[25].main.temp_min + " °C";
+                    document.querySelector("#max7").innerHTML = response.data.list[25].main.temp_max + " °C";
+                    document.querySelector("#hum7").innerHTML = response.data.list[25].main.humidity;
+                    document.querySelector("#feel7").innerHTML = response.data.list[25].main.feels_like + " °C";
+
+
+
+
+                    document.querySelector("#temp8").innerHTML = response.data.list[29].main.temp + " °C";
+                    document.querySelector("#min8").innerHTML = response.data.list[29].main.temp_min + " °C";
+                    document.querySelector("#max8").innerHTML = response.data.list[29].main.temp_max + " °C";
+                    document.querySelector("#hum8").innerHTML = response.data.list[29].main.humidity;
+                    document.querySelector("#feel8").innerHTML = response.data.list[29].main.feels_like + " °C";
+
+
+
+                    document.querySelector("#temp9").innerHTML = response.data.list[32].main.temp + " °C";
+                    document.querySelector("#min9").innerHTML = response.data.list[32].main.temp_min + " °C";
+                    document.querySelector("#max9").innerHTML = response.data.list[32].main.temp_max + " °C";
+                    document.querySelector("#hum9").innerHTML = response.data.list[32].main.humidity;
+                    document.querySelector("#feel9").innerHTML = response.data.list[32].main.feels_like + " °C";
+
+
+
+                    document.querySelector("#temp10").innerHTML = response.data.list[36].main.temp + " °C";
+                    document.querySelector("#max10").innerHTML = response.data.list[36].main.temp_max + " °C";
+                    document.querySelector("#hum10").innerHTML = response.data.list[36].main.humidity;
+                    document.querySelector("#min10").innerHTML = response.data.list[36].main.temp_min + " °C";
+                    document.querySelector("#feel10").innerHTML = response.data.list[36].main.feels_like + " °C";
+
+
+
+                    document.querySelector("#temp11").innerHTML = response.data.list[39].main.temp + " °C";
+                    document.querySelector("#min11").innerHTML = response.data.list[39].main.temp_min + " °C";
+                    document.querySelector("#max11").innerHTML = response.data.list[39].main.temp_max + " °C";
+                    document.querySelector("#hum11").innerHTML = response.data.list[39].main.humidity11;
+                    document.querySelector("#feel11").innerHTML = response.data.list[39].main.feels_l11ike + " °C"; 11
+
+
+
+
+
+
+
+
+
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+
+        }
+
+
+        // function hourWeather() {
+
+
+
+        //     //Hourly Weather
+        //     axios.get(`api.openweathermap.org/data/2.5/forecast?q=${city}&appid=2baadce54194fdee21bed0ae9b7ab7a4&units=metric`)
+
+        //         .then(function (response) {
+        //             // handle success
+
+        //             // document.getElementsByClassName('card').style.display = "block";
+
+        //             console.log("Hourly", response.data)
+
+        //         })
+        //         .catch(function (error) {
+        //             // handle error
+        //             console.log(error);
+        //         })
+
+
+
+
+
+
+        //     }
+
+        function showHideDiv(ele, ele1, ele2, ele3, ele4, ele5,
+            ele6, ele7, ele8, ele9, ele10, ele11
+        ) {
+            var srcElement = document.getElementById(ele);
+            var srcElement1 = document.getElementById(ele1);
+            var srcElement2 = document.getElementById(ele2);
+            var srcElement3 = document.getElementById(ele3);
+            var srcElement4 = document.getElementById(ele4);
+            var srcElement5 = document.getElementById(ele5);
+            var srcElement6 = document.getElementById(ele6);
+            var srcElement7 = document.getElementById(ele7);
+            var srcElement8 = document.getElementById(ele8);
+            var srcElement9 = document.getElementById(ele9);
+            var srcElement10 = document.getElementById(ele10);
+            var srcElement11 = document.getElementById(ele11);
+
+
+
+            if (srcElement != null && srcElement1 != null && srcElement2 != null && srcElement3 != null && srcElement4 != null && srcElement5 != null && srcElement6 != null && srcElement7 != null && srcElement8 != null && srcElement9 != null && srcElement10 != null && srcElement11 != null) {
+                if (srcElement.style.display !== "block" && srcElement1.style.display !== "block" && srcElement2.style.display !== "block" && srcElement3.style.display !== "block" && srcElement4.style.display !== "block" && srcElement5.style.display !== "block" && srcElement6.style.display !== "block" && srcElement7.style.display !== "block" && srcElement8.style.display !== "block" && srcElement9.style.display !== "block" && srcElement10.style.display !== "block" && srcElement11.style.display !== "block") {
+
+                    srcElement.style.display = 'block';
+                    srcElement1.style.display = 'block';
+                    srcElement2.style.display = 'block';
+                    srcElement3.style.display = 'block';
+                    srcElement4.style.display = 'block';
+                    srcElement5.style.display = 'block';
+                    srcElement6.style.display = 'block';
+                    srcElement7.style.display = 'block';
+                    srcElement8.style.display = 'block';
+                    srcElement9.style.display = 'block';
+                    srcElement10.style.display = 'block';
+                    srcElement11.style.display = 'block';
+
+
+                }
+
+                return false;
+            }
+        }
+
+        function showHideDv(ele) {
+            var srcElement = document.getElementById(ele);
+
+
+
+            if (srcElement != null) {
+                if (srcElement.style.display !== "block") {
+
+                    srcElement.style.display = 'block';
+                }
+
+                return false;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

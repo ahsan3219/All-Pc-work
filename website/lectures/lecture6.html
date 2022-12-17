@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        #btt {
+            background: white;
+            border-color: white;
+            border: 5px;
+            font-size: 13px;
+            color: black;
+            font-weight: bold;
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        #btt:hover {
+            background: rgb(0, 0, 0);
+            font-size: large;
+            font-weight: bold;
+            border-color: gray;
+            border: 5px;
+            color: rgb(255, 254, 254);
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        button {
+            background: white;
+            border-color: white;
+            border: 5px;
+            font-size: 13px;
+            color: black;
+            font-weight: bold;
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        button:hover {
+            background: rgb(0, 0, 0);
+            font-size: large;
+            font-weight: bold;
+            border-color: gray;
+            border: 5px;
+            color: rgb(255, 254, 254);
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        #email {
+            background-color: black;
+            border-radius: 30px 30px 30px 30px;
+            width: 350px;
+            font-size: 20px;
+            height: 60px;
+            align-items: center;
+            color: aliceblue;
+        }
+        
+        #ca {
+            border: 50px;
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 50%;
+            border-color: white;
+            width: 100px;
+            height: 100px;
+            color: black;
+            font-size: 30px;
+        }
+        
+        #ca:hover {
+            margin-top: 20px;
+            border: 5px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            border-style: double;
+            border-color: white;
+            text-align: 20px;
+            width: 130px;
+            height: 130px;
+            color: white;
+            font-size: 40px;
+        }
+        
+        #password {
+            background-color: black;
+            border-radius: 30px 30px 30px 30px;
+            width: 350px;
+            color: aliceblue;
+            font-size: 20px;
+            height: 60px;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>on click remove text and input your text is "placeholder"</h1><br>
+    <form><input type="text" placeholder="email address"></form><br>
+    <form><input type="password" placeholder="password"></form><br>
+    <form><input type="text" placeholder="address"></form><br>
+    <form><input type="text" placeholder="cnic"></form><br>
+    <br>
+    <h1>For Comment and Addree we use "textarea"</h1>
+    <textarea cols="30" rows="10"></textarea>
+    <br><br>
+    <textarea placeholder="Enter comment"></textarea>
+    <br><br>
+    <input type="number" placeholder="age">
+    <br><br>
+    <h1>Quiz radio button</h1><br><br><br>
+    <input type="radio" name="a" id="1"><label for="1">Male</label>
+    <input type="radio" name="a" id="2"><label for="2">Female</label>
+    <input type="radio" name="a" id="3"><label for="3">Other</label>
+
+    <br><br><br><br>
+    <h1>Question Answer mcqs quiz</h1>
+    <p> What is full for of html</p>
+    <input type="radio" name="b" id="4"><label for="4">hyper text markup language</label><br>
+    <input type="radio" name="b" id="5"><label for="5">hyper text map language</label><br>
+    <input type="radio" name="b" id="6"><label for="6">hyper text mark language</label><br>
+    <input type="radio" name="b" id="7"><label for="7">hyper taken markup language</label><br>
+    <input type="radio" name="b" id="8"><label for="8">hyper time markup language</label><br>
+    <br><br><br>
+    <h1>Checkbox</h1>
+    <p>full form of www</p>
+    <input type="checkbox" name="c" id=""><label for="">World wide website </label><br>
+    <input type="checkbox" name="c" id=""><label for="">World wive website </label><br>
+    <input type="checkbox" name="c" id=""><label for="">World wade website </label><br>
+    <input type="checkbox" name="c" id=""><label for="">World wife website </label><br>
+
+    <h1>Dropdown List</h1>
+    <label>Country Name</label>
+    <select>
+        <option>Pakistank12</option>
+        <option>Pakistank34</option>
+        <option>Pakistank5</option>
+        <option>Pakistank6</option>
+    </select>
+
+    <br><br><br><br>
+    <h1>Option with Enter your country</h1>
+    <p>Use attribute disable and selected in option</p>
+    <label>Country Name</label>
+    <select>
+        <option disabled selected>Enter your contry</option>
+        <option>Pakistank12</option>
+        <option>Pakistank34</option>
+        <option>Pakistank5</option>
+        <option>Pakistank6</option>
+    </select>
+
+    <br><br><br>
+    <h1>Add file in form</h1><br>
+    <input type="file">
+    <br><br>
+    <h1>
+        Form submission
+    </h1>
+    <h2>Method 1 = Input method</h2>
+    <input type="submit" id="btt">
+    <br><br><br>
+    <h2>
+        Method 2 = Button method </h2>
+    <button>Submit Form</button>
+    <br><br>
+    <h1>Add "requied" to the mandatory data</h1>
+    <br><br>
+    <h1>Add "action" in form tag to do further action after submiting the form</h1>
+    <br><br>
+    <h1>Add border around form use"fieldset" before form tag and use "legend" to give it value</h1>
+    <center><br><br>
+        <h1>Sign In</h1>
+    </center>
+    <center>
+        <form action="./lecture6signin.html" target="_blank">
+            <input required id="email" type="text" placeholder="Enter your email"><br><br>
+            <input required id="password" type="password" placeholder="Enter your password"><br><br>
+            <button>Sign In</button>
+            <div id="ca">
+                <h1>Or</h1>
+                <br><br> </div>
+            <br>
+            <button><a href="../lecture4page/signup.html" target="_blank">Sign Up</button>
+            </a>
+        </form>
+    </center>
+</body>
+
+</htmt>

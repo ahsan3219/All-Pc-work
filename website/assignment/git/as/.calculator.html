@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .bg {
+      animation: slide 3s ease-in-out infinite alternate;
+      background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+      bottom: 0;
+      left: -50%;
+      opacity: .5;
+      position: fixed;
+      right: -50%;
+      top: 0;
+      z-index: -1;
+    }
+
+    .bg2 {
+      animation-direction: alternate-reverse;
+      animation-duration: 4s;
+    }
+
+    .bg3 {
+      animation-duration: 5s;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, .8);
+      border-radius: .25em;
+      box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+      box-sizing: border-box;
+      left: 50%;
+      padding: 10vmin;
+      position: fixed;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    h1 {
+      font-family: monospace;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(-25%);
+      }
+
+      100% {
+        transform: translateX(25%);
+      }
+    }
+
+
+
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .content {
+      background-color: rgba(255, 255, 255, .8);
+      border-radius: .25em;
+      box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+      box-sizing: border-box;
+      left: 50%;
+      padding: 10vmin;
+      position: fixed;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    i {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      -webkit-animation: 'screen' infinite;
+      animation: 'screen' infinite;
+    }
+
+
+    i:nth-child(1) {
+      top: 20px;
+      left: 30px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(2, 226, 252, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #02e2fc;
+      animation-duration: 5s;
+    }
+
+    i:nth-child(2) {
+      top: 420px;
+      left: 30px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(250, 160, 2, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #faa002;
+      animation-duration: 21s;
+    }
+
+    i:nth-child(3) {
+      top: 550px;
+      left: 880px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(20, 252, 2, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #14fc02;
+      animation-duration: 5s;
+    }
+
+    i:nth-child(4) {
+      top: 5px;
+      left: 1030px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(252, 2, 196, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #fc02c4;
+      animation-duration: 4s;
+    }
+
+    i:nth-child(5) {
+      top: 280px;
+      left: 12px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(139, 44, 148, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #8b2c94;
+      animation-duration: 5s;
+    }
+
+    i:nth-child(6) {
+      top: 550px;
+      left: 30px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(251, 184, 41, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FBB829;
+      animation-duration: 6s;
+    }
+
+    i:nth-child(7) {
+      top: 650px;
+      left: 50px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(195, 255, 104, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #C3FF68;
+      animation-duration: 15s;
+    }
+
+    i:nth-child(8) {
+      top: 20px;
+      left: 860px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 0, 102, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FF0066;
+      animation-duration: 5s;
+    }
+
+    i:nth-child(9) {
+      top: 896px;
+      left: 132px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FFFF00;
+      animation-duration: 13s;
+    }
+
+    i:nth-child(10) {
+      top: 578px;
+      left: 357px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(127, 175, 27, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #7FAF1B;
+      animation-duration: 4s;
+    }
+
+    i:nth-child(11) {
+      top: 380px;
+      left: 230px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(1, 210, 255, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #01D2FF;
+      animation-duration: 5s;
+    }
+
+    i:nth-child(12) {
+      top: 570px;
+      left: 1100px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(237, 247, 255, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #EDF7FF;
+      animation-duration: 6s;
+    }
+
+    i:nth-child(13) {
+      top: 600px;
+      left: 600px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 255, 255, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #00FFFF;
+      animation-duration: 7s;
+    }
+
+    i:nth-child(14) {
+      top: 200px;
+      left: 520px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 255, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #0000FF;
+      animation-duration: 14s;
+    }
+
+    i:nth-child(15) {
+      top: 370px;
+      left: 500px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(16, 225, 228, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #10e1e4;
+      animation-duration: 9s;
+    }
+
+    i:nth-child(16) {
+      top: 620px;
+      left: 730px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 51, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FF3300;
+      animation-duration: 3s;
+    }
+
+    i:nth-child(17) {
+      top: 62px;
+      left: 330px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 234, 232, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FFEAE8;
+      animation-duration: 4s;
+    }
+
+    i:nth-child(18) {
+      top: 0px;
+      left: 250px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 229, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FFE500;
+      animation-duration: 5s;
+    }
+
+    i:nth-child(19) {
+      top: 600px;
+      left: 180px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 102, 153, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FF6699;
+      animation-duration: 6s;
+    }
+
+    i:nth-child(20) {
+      top: 987px;
+      left: 13px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(84, 156, 204, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #549CCC;
+      animation-duration: 7s;
+    }
+
+    i:nth-child(21) {
+      top: 120px;
+      left: 930px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 175, 3, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #B8AF03;
+      animation-duration: 8s;
+    }
+
+    i:nth-child(22) {
+      top: 80px;
+      left: 700px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(171, 250, 249, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #ABFAF9;
+      animation-duration: 5s;
+    }
+
+    i:nth-child(23) {
+      top: 350px;
+      left: 720px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(127, 15, 255, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #7F0FFF;
+      animation-duration: 2s;
+    }
+
+    i:nth-child(24) {
+      top: 997px;
+      left: 678px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(48, 128, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #308000;
+      animation-duration: 3s;
+    }
+
+    i:nth-child(25) {
+      top: 714px;
+      left: 246px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 38, 38, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FF2626;
+      animation-duration: 4s;
+    }
+
+    i:nth-child(26) {
+      top: 0px;
+      left: 480px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(15, 29, 215, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #0F1DD7;
+      animation-duration: 5s;
+    }
+
+    i:nth-child(27) {
+      top: 456px;
+      left: 1000px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(51, 102, 153, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #336699;
+      animation-duration: 6s;
+    }
+
+    i:nth-child(28) {
+      top: 350px;
+      left: 865px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(70, 172, 255, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #46ACFF;
+      animation-duration: 7s;
+    }
+
+    i:nth-child(29) {
+      top: 100px;
+      left: 100px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(222, 4, 5, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #DE0405;
+      animation-duration: 8s;
+    }
+
+    i:nth-child(30) {
+      top: 1087px;
+      left: 722px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(77, 254, 21, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #4DFE15;
+      animation-duration: 9s;
+    }
+
+    i:nth-child(31) {
+      width: 200px;
+      height: 200px;
+      top: 795px;
+      left: 605px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(243, 10, 70, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #F30A46;
+      animation-duration: 1s;
+    }
+
+    i:nth-child(32) {
+      top: 234px;
+      left: 678px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(245, 253, 45, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #F5FD2D;
+      animation-duration: 2s;
+    }
+
+    i:nth-child(33) {
+      top: 270px;
+      left: 1230px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(178, 0, 255, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #B200FF;
+      animation-duration: 3s;
+    }
+
+    i:nth-child(34) {
+      width: 200px;
+      height: 200px;
+      top: 1126px;
+      left: 332px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(102, 204, 255, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #66CCFF;
+      webkit-animation-duration: 4s;
+    }
+
+    i:nth-child(35) {
+      top: 407px;
+      left: 83px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(20, 243, 175, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #14F3AF;
+      animation-duration: 5s;
+    }
+
+    i:nth-child(36) {
+      width: 200px;
+      height: 200px;
+      top: 176px;
+      left: 297px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(100, 245, 102, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #64F566;
+      animation-duration: 6s;
+    }
+
+    i:nth-child(37) {
+      width: 300px;
+      height: 300px;
+      top: 820px;
+      right: 10px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(236, 218, 65, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #ECDA41;
+      animation-duration: 7s;
+    }
+
+    i:nth-child(38) {
+      top: 500px;
+      left: 500px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 61, 45, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FF3D2D;
+      animation-duration: 8s;
+    }
+
+
+    i:nth-child(39) {
+      top: 20px;
+      right: 26px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(74, 73, 235, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #4A49EB;
+      animation-duration: 9s;
+    }
+
+    i:nth-child(40) {
+      width: 200px;
+      height: 200px;
+      top: 251px;
+      left: 1053px;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 72, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      box-shadow: 0px 0px 5px 0px #FF4800;
+      animation-duration: 10s;
+    }
+
+
+    @keyframes screen {
+      from {
+        opacity: 0;
+      }
+
+      25% {
+        opacity: 0.3;
+        transform: scale3d(3, 3, 4);
+      }
+
+      50% {
+        opacity: 0.75;
+      }
+
+      75% {
+        opacity: 1;
+
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .round-button {
+      width: 15%;
+    }
+
+    .round-button-circle {
+      width: 50%;
+      height: 0;
+      padding-bottom: 50%;
+      border-radius: 50%;
+      overflow: hidden;
+
+      background: #FCD508;
+      box-shadow: 0 0 3px gray;
+    }
+
+    .round-button-circle:hover,
+    .round-button a:hover,
+    .round-button span:hover {
+      background: #463D0D;
+      color: #FCD508;
+    }
+
+
+
+
+
+
+
+
+
+
+    .icon-btn {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #cdcdcd;
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      transition: width 0.2s ease-in-out;
+      background: #FCD508;
+      box-shadow: 0 0 3px gray;
+
+    }
+
+    .add-btn:hover {
+      width: 120px;
+      font-size: 20px;
+      background: #463D0D;
+      color: #FCD508;
+    }
+
+    .add-btn::before,
+    .add-btn::after {
+      transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+      content: "";
+
+      top: calc(50% - 2px);
+
+    }
+
+    .add-btn::after {
+      right: 14px;
+      overflow: hidden;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+
+    .add-btn::before {
+      left: 14px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+
+    .icon-btn:focus {
+      outline: none;
+    }
+
+    .btn-txt {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .add-btn:hover::before,
+    .add-btn:hover::after {
+      width: 4px;
+      border-radius: 2px;
+    }
+
+    .add-btn:hover .btn-txt {
+      opacity: 1;
+    }
+
+    .add-icon::after,
+    .add-icon::before {
+      transition: all 0.2s ease-in-out;
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 2px;
+      top: calc(50% - 10px);
+      background: red;
+      overflow: hidden;
+    }
+
+    .add-icon::before {
+      left: 22px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+
+    .add-icon::after {
+      right: 22px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+
+    .add-btn:hover .add-icon::before {
+      left: 15px;
+      height: 4px;
+      top: calc(50% - 2px);
+    }
+
+    .add-btn:hover .add-icon::after {
+      right: 15px;
+      height: 4px;
+      top: calc(50% - 2px);
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <i></i>
+  <div class="content">
+    <h1 style="font-family: serif;">Calculator</h1>
+
+
+    <form action="" onsubmit="doFun();return false" style="display: flex;">
+
+      <input class="d-sm-table" style="width: 130px; margin-left: 10%;" id="firstnumber" type="text"
+        placeholder="First Number" required>
+
+      <input type="text" style="width: 130px; margin-left: 1%;" placeholder="Second Number" id="secondnumber" required>
+      <input type="text" style="width: 130px; margin-left: 1%;" placeholder="Third Number" id="thirdnumber" required>
+
+    </form>
+    <br>
+
+
+
+
+
+    <button onclick="doSum()" class="icon-btn add-btn  ">+</button>
+    <button onclick="doSub()" class="icon-btn add-btn  ">-</button>
+    <button onclick="doDi()" class="icon-btn add-btn   "> /</button>
+    <br>
+    <button onclick="doMu()" class="icon-btn add-btn  ">*</button>
+    <button onclick="doPo()" class="icon-btn add-btn  ">^</button>
+    <button onclick="doMo()" class="icon-btn add-btn  ">%</button>
+    <br>
+    <button onclick="doMe()" class="icon-btn add-btn  ">x̄</button>
+    <button onclick="doS()" class="icon-btn add-btn  ">sin</button>
+    <button onclick="doC()" class="icon-btn add-btn  ">cos</button>
+    <br>
+    <button onclick="doT()" class="icon-btn add-btn  ">tan</button>
+    <button onclick="evenodd()" class="icon-btn add-btn  ">E/O</button>
+    <button class="icon-btn add-btn">Roots </button>
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+    <p style="color: black; font-size: 30px;"> Result</p>
+    <h1 id="r" style="color:black;"></h1>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function doSum() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+      let secondnumber = Number(document.querySelector('#secondnumber').value)
+
+      let sum = firstnumber + secondnumber;
+
+      document.querySelector('#r').innerHTML = sum;
+    }
+
+
+    function doSub() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+
+      let secondnumber = Number(document.querySelector('#secondnumber').value)
+      let sum = firstnumber - secondnumber;
+
+      document.querySelector('#r').innerHTML = sum;
+    }
+
+
+
+    function doMu() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+
+      let secondnumber = Number(document.querySelector('#secondnumber').value)
+      let sum = firstnumber * secondnumber;
+
+      document.querySelector('#r').innerHTML = sum;
+    }
+
+
+
+
+
+    function doDi() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+
+      let secondnumber = Number(document.querySelector('#secondnumber').value)
+      let sum = firstnumber / secondnumber;
+
+      document.querySelector('#r').innerHTML = sum;
+    }
+
+
+    function doPo() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+
+      let secondnumber = Number(document.querySelector('#secondnumber').value)
+      let sum = firstnumber ** secondnumber;
+
+      document.querySelector('#r').innerHTML = sum;
+    }
+
+    function doMo() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+
+      let secondnumber = Number(document.querySelector('#secondnumber').value)
+      let sum = firstnumber % secondnumber;
+
+      document.querySelector('#r').innerHTML = sum;
+    }
+
+    function doMe() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+
+      let secondnumber = Number(document.querySelector('#secondnumber').value)
+      let sum = (firstnumber + secondnumber) / 2;
+
+      document.querySelector('#r').innerHTML = sum;
+    }
+    function doS() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+      let sum = Math.sin(firstnumber)
+      document.querySelector('#r').innerHTML = sum;
+    }
+    function doC() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+      let sum = Math.cos(firstnumber)
+      document.querySelector('#r').innerHTML = sum;
+    }
+    function doT() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+      let sum = Math.tan(firstnumber)
+      document.querySelector('#r').innerHTML = sum;
+    }
+
+    function evenodd() {
+      let firstnumber = Number(document.querySelector('#firstnumber').value)
+
+      if (firstnumber % 2 == 0) {
+        let Result = "Even"
+        document.querySelector('#r').innerHTML = Result;
+      }
+      else {
+        let sum = "Odd"
+        document.querySelector('#r').innerHTML = sum;
+
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function d() {
+
+      let a = Number(document.querySelector('#firstnumber').value)
+      let b = Number(document.querySelector('#secondnumber').value)
+      let c = Number(document.querySelector('#thirdnumber').value)
+      d = Math.sqrt((b ** 2) - 4 * a * c)
+
+      sum = `The roots of quadratic equation are real and different ${d}`
+      document.querySelector('#r').innerHTML = sum;
+
+
+      if (d > 0) {
+        r1 = (-b + Math.sqrt((b ** 2) - 4 * a * c)) / (2 * a);
+        r2 = (-b - Math.sqrt((b ** 2) - 4 * a * c)) / (2 * a);
+        sum = `The roots of quadratic equation are real and different ${r1} and ${r2} `
+        document.querySelector('#r').innerHTML = sum;
+
+      }
+      else if (d == 0) {
+        r1 = r2 = -b / (2 * a);
+        sum = `The roots of quadratic equation are real and equal ${r1} and ${r2} `
+        document.querySelector('#r').innerHTML = sum;
+      }
+      else {
+        let realPart = (-b / (2 * a)).toFixed(2);
+        let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
+
+        sum = `The roots of quadratic equation are not real ${r1} and ${r2}`
+        document.querySelector('#r').innerHTML = sum;
+
+
+      }
+
+    }
+
+
+  </script>
+
+
+
+</body>
+
+</html>

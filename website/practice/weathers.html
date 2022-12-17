@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js
+
+
+
+    "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <style>
+        body {
+            background-image: url("https://tasbihdigital.com/wp-content/uploads/2022/04/HD-Masjid-Wallpaper.jpg"
+                );
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: aliceblue;
+        }
+
+        /* #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        } */
+
+        .weatherCard {
+            border: 1px solid black;
+            margin-top: 30px;
+            border-radius: 30px;
+            padding: 10px;
+            background: rgb(105, 138, 227);
+            background: linear-gradient(90deg, rgba(105, 138, 227, 1) 0%, rgba(0, 212, 255, 1) 100%);
+        }
+
+        .weatherCard:hover {
+            transform: scale(0.9, 0.9);
+            transition: 2s;
+        }
+
+
+
+        table {
+            border: 2px solid aliceblue;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10%;
+            border-radius: 1em;
+        }
+
+        th {
+            padding: 5px;
+            letter-spacing: 5px;
+            border-bottom: 10px;
+        }
+
+        td {
+            padding: 20px;
+            border-radius: 13px;
+            letter-spacing: 10px;
+        }
+
+        th {
+            border-radius: 15px;
+        }
+
+        #forecast {
+            display: flex;
+
+        }
+
+        #forecast>div {
+            width: 190px;
+            margin: 15px;
+            padding: 50px;
+
+        }
+
+        #main {
+            display: flex;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="main">
+        <h1
+            style="display: flex; justify-content: center; color: aliceblue; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Weather app</h1>
+
+
+        <form style="display: flex; justify-content: center; align-items: center;"
+            onsubmit="submitFunction(); return false">
+            City Name: <input type="text" id="cityName" required>
+            <br>
+            <button>get weather</button>
+        </form>
+    </div>
+
+    <table style="background-color: black;">
+        <tr>
+            <th colspan="5">Month</th>
+        </tr>
+        <tr>
+            <th colspan="5">Ahsan</th>
+        </tr>
+        <tr>
+            <th>Ahsan </th>
+            <th>Ahsan </th>
+            <th>Ahsan </th>
+            <th>Ahsan </th>
+            <th>Ahsan </th>
+
+
+        </tr>
+        <tr>
+            <td>February</td>
+            <td>February</td>
+            <td>February</td>
+            <td>February</td>
+            <td>February</td>
+        </tr>
+    </table>
+
+    <div id="current"></div>
+
+
+
+
+    <div id="forecast"> </div>
+
+    <!-- <video autoplay muted loop id="myVideo">
+        <source src="https://player.vimeo.com/external/189545487.sd.mp4?s=8cd2af1ec08f7ce121a5a6a09c78c05237943524&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+     </video> -->
+
+    <script>
+
+        // let formatedTime = moment("2022-09-12 21:00:00").format("ddd ha");
+        // console.log("formatedTime: ", formatedTime);
+
+
+        function submitFunction() {
+            let cityName = document.querySelector("#cityName").value
+
+            console.log("cityName: ", cityName);
+
+
+            // get 5 day forecast
+            axios.get(`http://api.aladhan.com/v1/calendarByAddress?address=${cityName}`)
+
+                .then(function (response) {
+
+
+
+                    console.log("forecast: ", response.data);
+                    console.log(" status: ", response.data.status);
+
+                    console.log(" status: ", response.data.data[2].timings);
+                    let forecastDiv = document.querySelector("#forecast");
+                    forecastDiv.innerHTML = ""
+
+                    forecastDiv.innerHTML +=
+                        response.data.data.map(eachItem => {
+                            `<table>
+                            
+                            
+                            
+                            
+                            </table>` })
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    <!-- 
+response.data.data.map(eachItem => {
+    forecastDiv.innerHTML +=
+        `<div class="weatherCard">
+`
+            //                           ${moment(eachItem?.date?.gregorian?.date
+            // ).format("ddd D/M")}</span>
+            //     <br/>
+            //     <span>${moment(eachItem?.date?.timestamp
+            // ).format("ha")}</span>
+            `
+            < h1 > ${eachItem?.timings}</h1 >
+            <span>${eachItem?.meta.timezone}</span>
+           `
+            // <img src="https://openweathermap.org/img/wn/${eachItem?.weather[0]?.icon}@2x.png"/>
+            // <br />
+            // <span>${eachItem?.main?.temp_min.toFixed(0)}°C - ${eachItem?.main?.temp_max.toFixed(0)}°C </span>
+            ` </div >`
+})
+}) -->
+</body>
+
+
+
+</html>

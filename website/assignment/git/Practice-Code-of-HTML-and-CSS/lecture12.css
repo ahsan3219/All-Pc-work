@@ -1,0 +1,72 @@
+body {
+    width: auto;
+    height: auto;
+    color: aliceblue;
+    background-color: black;
+}
+
+.body1 {
+    width: 1195px;
+    height: 540px;
+    background: skyblue;
+}
+
+#white {
+    width: 105px;
+    height: 105px;
+    background-color: red;
+    display: inline-block;
+    transition: 3s;
+}
+
+#black {
+    display: inline-block;
+    width: 105px;
+    height: 105px;
+    background-color: blue;
+    transition: 3s;
+
+}
+
+#img1:hover {
+    position: absolute;
+    top: 987px;
+    left: 8px;
+    transition: 3s;
+}
+
+#img2:hover {
+    transition: 5s;
+    position: absolute;
+    top: 987px;
+    left: 662px;
+
+}
+
+#img3 {
+    position: relative;
+    top: -217px;
+    left: -218px;
+
+}
+
+ul {
+    background-color: burlywood;
+    /* position: sticky; */
+    position: fixed;
+    margin-top: 10px
+}
+
+li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    background-color: aqua;
+    color: black;
+}
+
+#btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}

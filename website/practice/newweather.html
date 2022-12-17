@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/x-icon" href="https://cdn.worldvectorlogo.com/logos/weather-ios.svg">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <style>
+        #card {
+            border: 3px solid rgb(223, 247, 66);
+            width: 50%;
+            height: auto;
+            margin-left: 25%;
+            padding: 5%;
+            border-radius: 40px;
+            background: rgb(220, 241, 91);
+            background: linear-gradient(90deg, rgba(220, 241, 91, 1) 0%, rgba(232, 219, 74, 1) 100%);
+        }
+
+        #card:hover {
+            transform: scale(1.1, 1.1);
+            transition: 2s;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+        }
+
+
+        #cardHo {
+            border: 2px solid rgb(70, 215, 244);
+            width: 20%;
+            height: auto;
+            margin: 2%;
+            padding: 5%;
+            border-radius: 40px;
+            background: rgb(91, 216, 241);
+            background: linear-gradient(90deg, rgba(91, 216, 241, 1) 0%, rgba(48, 146, 228, 1) 100%);
+        }
+
+        #cardHo:hover {
+            transform: scale(1.1, 1.1);
+            transition: 2s;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+
+
+    <br>
+    <form action="" onsubmit="doCheck(); return false">
+        City Name: <input type="text" name="" placeholder="Karachi" id="city">
+        <br><br><button>Get Weather</button>
+
+    </form>
+    <br>
+    <div id="mainc"></div>
+    <!-- <div id="card">
+    </div>
+    <br>
+    <div id="cardHo"></div> -->
+
+
+
+
+    <script>
+
+
+        function doCheck() {
+            city = document.querySelector("#city").value;
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2baadce54194fdee21bed0ae9b7ab7a4&units=metric`)
+
+                .then(function (response) {
+                    // handle success
+
+                    // document.getElementsByClassName('card').style.display = "block";
+                    a = document.querySelector("#mainc").innerHTML = ` <div id="card">
+                        <img id="img1" src="" />
+
+                        <span id="upResult"></span>
+
+    <h3 id="result"></h3>
+    
+    <span id="downResult"></span>
+    </div>`
+
+
+                    document.querySelector("#result").innerHTML = `Temp ${response.data.main.temp} °C`
+                    document.querySelector("#upResult").innerHTML = `${response.data.name} Now`
+                    document.querySelector("#downResult").innerHTML = `${response.data.main.temp_max}°C - ${response.data.main.temp_min}°C `
+                    document.querySelector("#img1").src = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`
+                    console.log(response.data)
+
+
+
+                    // document.querySelector("#r").innerHTML = a
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+
+
+
+
+            //            Hourly Weather
+            axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=2baadce54194fdee21bed0ae9b7ab7a4&units=metric`)
+
+                .then(function (response) {
+                    // handle success
+
+                    // document.getElementsByClassName('card').style.display = "block";
+
+                    console.log("Hourly", response.data)
+
+
+                    document.querySelector("#temp11").innerHTML = response.data.list[39].main.temp + " °C";
+                    document.querySelector("#min11").innerHTML = response.data.list[39].main.temp_min + " °C";
+                    document.querySelector("#max11").innerHTML = response.data.list[39].main.temp_max + " °C";
+                    document.querySelector("#hum11").innerHTML = response.data.list[39].main.humidity11;
+                    document.querySelector("#feel11").innerHTML = response.data.list[39].main.feels_l11ike + " °C"; 11
+
+
+
+
+
+
+
+
+
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+
+        }
+
+
+        // function hourWeather() {
+
+
+
+        //     //Hourly Weather
+        //     axios.get(`api.openweathermap.org/data/2.5/forecast?q=${city}&appid=2baadce54194fdee21bed0ae9b7ab7a4&units=metric`)
+
+        //         .then(function (response) {
+        //             // handle success
+
+        //             // document.getElementsByClassName('card').style.display = "block";
+
+        //             console.log("Hourly", response.data)
+
+        //         })
+        //         .catch(function (error) {
+        //             // handle error
+        //             console.log(error);
+        //         })
+
+
+
+
+
+
+        //     }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <H1>Lecture 22</H1>
+
+
+
+
+    <script>
+        //upper and lower case
+        document.write("<h1>" + "upper and lower case" + "</h1>" + "<br>")
+        let p = "ahsan raza rizvi"
+        document.write("<h1>" + p + "</h1>" + "<br>")
+        document.write("<h3>" + "Upper case output " + p.toUpperCase() + "</h3>" + "<br>")
+        let v = "AHsAn raZa riZVi"
+        document.write("<h1>" + v + "</h1>" + "<br>")
+        document.write("<h3>" + "Lower case output " + p.toLowerCase() + "</h3>" + "<br>")
+
+        function doUpfi(Name) {
+            // let a = document.write("First letter = " + Name.slice(0, 1))
+            b = Name.slice(0, 1); c = b.toUpperCase();
+            d = Name.slice(1); e = d.toLowerCase()
+
+            return c + e
+
+        }
+
+        g = prompt("Enter city Name");
+        city = ["Karachi", "Hyderabad", "Lahore", "Islamabad"];
+        let f = g.slice(0, 1);
+
+        let o = g.slice(1);
+        s = f.toUpperCase() + o.toLowerCase();
+        for (i = 0; i < city.length; i++) {
+            if (city[i] == s) {
+                document.write("mil gaya" + "<br>")
+            }
+
+        }
+
+        document.write(Math.random() * 3 + "<br>")
+
+        // Math ceil=forward, floor=backward, random=random number,round=round off 
+
+        console.log(Math.ceil(0.7),
+            Math.floor(0.3),
+            Math.round(66.7)
+        )
+        head = prompt("Enter your Name")
+
+        tail = prompt("Enter your Name")
+        c = Math.random() * 2
+        f = Math.floor(c)
+        c = Math.ceil(c)
+        if (f == 0 || c == 0) {
+            console.log("Head" + head + "Wins")
+        }
+        else { console.log("Tail" + tail + "Wins") }
+        // Replacing text 
+        a = "Me first agea hn"
+        document.write(a + "<br>")
+        d = a.replace("Me", "Ahsan")
+        document.write(d + "<br>")
+
+
+
+        //Replacing same word text
+
+        p = "World is so beautiful to me the World";
+        document.write(p + "<br>")
+        s = p.replace(/"World"/g, "Ahmed")
+        document.write(s)
+    </script>
+</body>
+
+</html>

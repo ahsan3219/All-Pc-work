@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Registration form</title>
+
+
+    <style>
+        body {
+            background-color: rgb(209, 248, 183);
+            font-family: 'Courier New', Courier, monospace;
+            color: black;
+        }
+        
+        label {
+            margin-left: 420px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        #f {
+            margin-left: 50px;
+            border: 4px;
+            margin-top: 7px;
+            border-style: double;
+            border-color: black;
+            color: black;
+            width: 250px;
+            height: 20px;
+        }
+        
+        #l {
+            margin-left: 62px;
+            border: 4px;
+            margin-top: 7px;
+            border-style: double;
+            border-color: black;
+            color: black;
+            width: 250px;
+            height: 20px;
+        }
+        
+        #m {
+            margin-left: 90px;
+            border: 4px;
+            margin-top: 7px;
+            border-style: double;
+            border-color: black;
+            color: black;
+            width: 250px;
+            height: 20px;
+        }
+        
+        #n {
+            margin-left: 62px;
+            border: 4px;
+            margin-top: 7px;
+            border-style: double;
+            border-color: black;
+            color: black;
+            width: 250px;
+            height: 20px;
+        }
+        
+        #e {
+            margin-left: 105px;
+            border: 4px;
+            margin-top: 7px;
+            border-style: double;
+            border-color: black;
+            color: black;
+            width: 250px;
+            height: 20px;
+        }
+        
+        #p {
+            margin-left: 70px;
+            border: 4px;
+            margin-top: 7px;
+            border-style: double;
+            border-color: black;
+            color: black;
+            width: 250px;
+            height: 20px;
+        }
+        
+        #a {
+            margin-left: 80px;
+            border: 4px;
+            margin-top: 7px;
+            border-style: double;
+            border-color: black;
+            color: black;
+            width: 250px;
+            height: 60px;
+        }
+        
+        #d {
+            margin-left: 10px;
+            border: 4px;
+            margin-top: 7px;
+            border-style: double;
+            border-color: black;
+            color: black;
+            width: 250px;
+            height: 20px;
+        }
+        
+        #r {
+            margin-top: 5px;
+            margin-left: 95px;
+        }
+        
+        #ta {
+            margin-top: 0px;
+            position: relative;
+        }
+        
+        #but1 {
+            background: white;
+            margin-left: 440px;
+            margin-top: 10px;
+            border-color: white;
+            border: 5px;
+            font-size: 13px;
+            color: black;
+            font-weight: bold;
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        #but1:hover {
+            background: rgb(0, 0, 0);
+            font-size: large;
+            font-weight: bold;
+            margin-top: 10px;
+            border-color: gray;
+            border: 5px;
+            color: rgb(255, 254, 254);
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        #but2 {
+            background: white;
+            margin-left: 30px;
+            margin-top: 10px;
+            border-color: white;
+            border: 5px;
+            font-size: 13px;
+            color: black;
+            font-weight: bold;
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        #but2:hover {
+            background: rgb(0, 0, 0);
+            font-size: large;
+            margin-top: 10px;
+            font-weight: bold;
+            border-color: gray;
+            border: 5px;
+            color: rgb(255, 254, 254);
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        #g {
+            margin-left: 418px;
+            margin-top: 5px;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <h1>
+            <u> Registration form</h1>
+        </u>
+    </center>
+    <br><br>
+    <form action="../lectures/lecture6signin.html">
+        <label>First Name</label> <input required id="f" type="text" align="center">
+        <label>Last Name</label> <input required id="l" type="text" align="center">
+        <label>Nick Name</label> <input required id="n" type="text" align="center">
+        <label>Email         </label> <input required id="e" type="text" align="center">
+        <label>Password</label> <input required id="p" type="password" align="center">
+        <label>Date Of Birth</label> <input required id="d" type="date" align="center">
+        <br><br><label id="g">Gender</label> <input required type="radio" id="r" name="a">Male <input name="a" type="radio" align="center">Female <input name="a" type="radio" align="center">Others
+
+        <label>Mobile</label> <input id="m" required type="number" align="center"><br>
+        <label id="ta">Address</label>
+        <textarea required id="a"></textarea>
+        <br><br>
+        <button id="but1">Submit</button>
+        <button id="but2" a href="./registrationform.html">Reset</button>
+    </form>
+
+
+
+
+
+
+
+</body>
+
+</html>

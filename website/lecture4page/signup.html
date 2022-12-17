@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        button {
+            background: white;
+            border-color: white;
+            border: 5px;
+            font-size: 13px;
+            color: black;
+            font-weight: bold;
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        button:hover {
+            background: rgb(0, 0, 0);
+            font-size: large;
+            font-weight: bold;
+            border-color: gray;
+            border: 5px;
+            color: rgb(255, 254, 254);
+            border-style: double;
+            height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            width: 200px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        
+        select {
+            width: 200px;
+            height: 30px;
+            background-color: black;
+            border-radius: 3px 4px 3px 4px;
+            border: 4px;
+            border-style: double;
+            border-color: aliceblue;
+            color: aliceblue;
+        }
+        
+        #email {
+            background-color: black;
+            border-radius: 30px 30px 30px 30px;
+            width: 350px;
+            margin-left: 17px;
+            font-size: 20px;
+            height: 60px;
+            align-items: center;
+            color: aliceblue;
+        }
+        
+        input {
+            margin-left: 30px;
+        }
+        
+        #radio {
+            background-color: black;
+            font-size: 20px;
+            color: aliceblue;
+        }
+        
+        #password {
+            background-color: black;
+            border-radius: 30px 30px 30px 30px;
+            width: 350px;
+            color: aliceblue;
+            font-size: 20px;
+            height: 60px;
+            align-items: center;
+        }
+        
+        legend {
+            font-size: large;
+            border: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sign Up Page</h1>
+    <br>
+    <center>
+        <h1>Sign Up </h1>
+    </center>
+    <center>
+        <fieldset>
+            <legend align="left">Sign Up </legend>
+            <form action="../lectures/lecture6signin.html">
+                <input required id="email" type="text" placeholder="Enter your first name"><br><br>
+                <input required id="email" type="text" placeholder="Enter your last name"><br><br>
+                <input required id="email" type="text" placeholder="Enter your email"><br><br>
+                <input required id="email" type="number" placeholder="Enter your age"><br><br>
+                <input required id="password" type="password" placeholder="Enter your password"><br><br>
+                <input required id="radio" type="radio" name="a"><label for="radio">Male</label>
+                <input required id="radio" type="radio" name="a"><label for="radio">Female</label><br><br>
+                <select>
+                <option disabled selected>Enter your country</option>
+                <option>Pakistan</option>
+                <option>China</option>
+                <option>India</option>
+                <option>USA</option>
+                <option>Polland</option>
+            </select>
+                <p>Are you agree with our policies</p>
+                <input required id="checkbox" type="checkbox"><br><br>
+
+
+
+
+
+                <button>Sign Up</button>
+            </form>
+        </fieldset>
+</body>
+
+</html>
